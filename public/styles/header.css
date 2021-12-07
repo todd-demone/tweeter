@@ -1,8 +1,10 @@
 header {
   height: 520px;
+  /* height: 400px; */
   width: 100%;
   position: absolute;
   top: 0;
+  /* top: 120px; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
