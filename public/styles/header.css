@@ -1,0 +1,17 @@
+header {
+  height: 520px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #deac56;
+  background-image: url('/images/asfalt-light.png');
+  color: #ffffff;
+}
+
+.light-heading {
+  font-weight: 300;
+}
