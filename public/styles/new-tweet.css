@@ -11,7 +11,7 @@
 #tweet-text,
 #tweet-text:focus {
   width: 100%;
-  line-height: 0.5;
+  /* line-height: 0.5; */
   margin-bottom: .5rem;
   background-color: #f4f1ec;
   outline: none;
@@ -31,6 +31,9 @@
   color: #FFFFFF;
 }
 .counter {
- 
  font-size: 1.25rem;
+} 
+
+.counter.negative {
+  color: red;
 }
