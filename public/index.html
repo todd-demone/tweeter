@@ -23,6 +23,10 @@
 
     <!-- Header CSS -->
     <link rel="stylesheet" href="/styles/header.css">
+
+    <!-- New Tweet CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css">
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -56,11 +60,16 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <div class="humming-container">
-        <div class="humming"><span>What are you humming about?</span></div>
-        <div><hr></div>
-        <div class="chars-remaining"><span >140</span></div>
-      </div>
+      <section class="new-tweet">
+        <form action='/tweets' method="post">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea autofocus name="text" id="tweet-text"></textarea>
+          <div class="flex-row-space-between">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
