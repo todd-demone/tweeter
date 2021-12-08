@@ -1,0 +1,36 @@
+
+ .new-tweet {
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.new-tweet label {
+  font-weight: 600;
+}
+
+#tweet-text,
+#tweet-text:focus {
+  width: 100%;
+  line-height: 0.5;
+  margin-bottom: .5rem;
+  background-color: #f4f1ec;
+  outline: none;
+  border-width: 0 0 3.5px;
+}
+
+.flex-row-space-between {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+.flex-row-space-between button {
+  padding: 2px 8px;
+  font-size: 1rem;
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+.counter {
+ 
+ font-size: 1.25rem;
+}
