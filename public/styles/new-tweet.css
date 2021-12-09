@@ -1,39 +1,53 @@
-
- .new-tweet {
-  margin: 0 auto;
-  padding: 3rem 0;
+.new-tweet {
+  margin-bottom: 2.5rem;
+  padding: 1rem;
 }
 
-.new-tweet label {
+.new-tweet form label {
   font-weight: 600;
 }
 
 #tweet-text,
 #tweet-text:focus {
   width: 100%;
-  /* line-height: 0.5; */
   margin-bottom: .5rem;
+  padding-top: .5rem;
   background-color: #f4f1ec;
   outline: none;
+  resize: none;
   border-width: 0 0 3.5px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
-.flex-row-space-between {
+.new-tweet footer {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
 }
 
-.flex-row-space-between button {
-  padding: 2px 8px;
+.new-tweet footer button {
+  /* margin: 5px; */
+  padding: .25rem .5rem;
   font-size: 1rem;
+  font-weight: 600;
   background-color: #4056A1;
   color: #FFFFFF;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2.5px solid transparent;
 }
-.counter {
+
+.new-tweet footer button:focus,
+.new-tweet footer button:active {
+  border-color: #6691f7;
+}
+
+.new-tweet footer .counter {
  font-size: 1.25rem;
 } 
 
-.counter.negative {
+.new-tweet footer .counter.negative {
   color: red;
 }
