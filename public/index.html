@@ -27,6 +27,9 @@
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css">
 
+    <!-- Tweet CSS -->
+    <link rel="stylesheet" href="/styles/tweet.css">
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -56,7 +59,7 @@
     </div>
     <br>
     <div>
-      <h2>Alice <span class="light-heading">Smith</span></h2>
+      <h2>Rhoda <span class="light-heading">Jacobs</span></h2>
     </div>
   </header>
 </div>
@@ -67,12 +70,32 @@
         <form action='/tweets' method="post">
           <label for="tweet-text">What are you humming about?</label>
           <textarea autofocus name="text" id="tweet-text"></textarea>
-          <div class="flex-row-space-between">
+          <footer>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
+          </footer>
         </form>
       </section>
+      <article class="tweet">
+        <header>
+          <div class="avatar-and-name">
+            <img src="https://i.imgur.com/nlhLi3I.png" alt="small-avatar" width="48" height="48">
+            <span class="name">Rhoda Jacobs</span>
+          </div>
+          <div class="handle">
+            <span>@MrsJacobs</span>
+          </div>
+        </header>
+        <div class="text">Hello world!</div>
+        <footer>
+          <span class="date">10 days ago</span>
+          <div>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     </main>
   </body>
 </html>
