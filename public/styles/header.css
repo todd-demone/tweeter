@@ -1,19 +1,22 @@
-.header {
+.banner {
   height: 520px;
-  /* height: 400px; */
   width: 100%;
-  position: absolute;
-  top: 0;
-  /* top: 120px; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  padding: 2rem;
   background-color: #deac56;
   background-image: url('/images/asfalt-light.png');
   color: #ffffff;
 }
 
-.light-heading {
+.banner img {
+  margin-bottom: 2rem;
+}
+.banner h2 {
+  margin: 0;
+}
+.banner h2 .light-heading {
   font-weight: 300;
 }
