@@ -1,7 +1,7 @@
 .tweet {
   padding: 2rem;
 }
-.tweet:hover {
+.tweet-inner:hover {
   box-shadow: 6px 6px #c9cbde;
 }
 .tweet-inner {
