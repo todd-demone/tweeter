@@ -28,9 +28,11 @@
 }
 
 .tweet header .handle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: #c9cbde;
   font-weight: 600;
-  line-height: 48px;
 }
 
 .tweet main {
