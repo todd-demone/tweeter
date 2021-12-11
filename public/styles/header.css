@@ -10,11 +10,8 @@
   color: #ffffff;
 }
 
-.banner img {
-  margin-bottom: 2rem;
-}
 .banner h2 {
-  margin: 0;
+  margin: 2rem 0 0;
 }
 .banner h2 .light-heading {
   font-weight: 300;
