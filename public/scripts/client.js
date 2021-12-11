@@ -65,4 +65,15 @@ $(document).ready( function() {
   }
   
   renderTweets(data);
+
+  $('#tweet-form').on('submit', function(e) {
+    e.preventDefault();
+    const $form = $(this);
+    const data = $form.serialize();
+    const url = $form.attr('action');
+    $.post(url, data)
+    .done(function( msg ) {
+      console.log(`successfully posted ${data} to ${url}`);
+    });
+  });
 });
