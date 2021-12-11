@@ -15,7 +15,7 @@
 
 .tweet header {
   margin-top: 1rem;
-  padding: 0 1.5rem 0 1rem;
+  padding: 0 1.5rem 0 0.5rem;
   display: flex;
   justify-content: space-between;
 } 
