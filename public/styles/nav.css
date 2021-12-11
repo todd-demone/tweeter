@@ -12,9 +12,11 @@
 }
 
 .navbar .logo {
+  display: flex; /* necessary so that the logo is vertically aligned with the CTA on the right hand side */
+  flex-direction: column;
+  justify-content: center;
   font-family: 'Bungee', cursive;
   font-size: 2rem;
-  line-height: 56px;
 }
 
 .navbar .cta {
