@@ -3,16 +3,14 @@
 }
 
 .new-tweet form label {
-  display: inline-block;
-  margin-bottom: .5rem; 
   font-weight: 600;
 }
 
 #tweet-text,
 #tweet-text:focus {
   width: 100%;
+  margin-top: 0.5rem;
   padding: 0 0 .5rem;
-  margin-bottom: .5rem;
   background-color: #f4f1ec;
   color: #545149;
   outline: none;
@@ -23,6 +21,7 @@
 }
 
 .new-tweet footer {
+  margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
