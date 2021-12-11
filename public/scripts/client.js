@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready( () => {
+$(document).ready( function() {
   const data = [
     {
       "user": {
