@@ -1,22 +1,24 @@
+#tweets-container {
+  padding: 1rem 0 2rem;
+}
+
 .tweet {
-  padding: 2rem;
-}
-.tweet-inner:hover {
-  box-shadow: 6px 6px #c9cbde;
-}
-.tweet-inner {
-  padding: 1rem;
+  margin: 2rem 0 0;
+  padding: 0 1rem 1rem;
   border-style: solid;
   border-width: 3.5px;
 }
 
+.tweet:hover {
+  box-shadow: 6px 6px #c9cbde;
+}
+
 .tweet header {
-  padding-left: 1rem;
-  padding-right: 1.5rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  padding: 0 1.5rem 0 1rem;
   display: flex;
   justify-content: space-between;
-}
+} 
 
 .tweet header .avatar-and-name {
   display: flex;
@@ -36,7 +38,7 @@
 }
 
 .tweet main {
-  margin-bottom: .75rem;
+  margin-top: 2rem;
   padding: 0 1.5rem 1.5rem;
   border-style: solid;
   border-width: 0 0 3.5px;
@@ -44,7 +46,8 @@
 }
 
 .tweet footer {
-  padding: 0 1.5rem;
+  margin-top: 0.75rem;
+  padding: 0 1.5rem 0;
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
