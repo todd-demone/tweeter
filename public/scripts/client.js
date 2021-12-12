@@ -76,9 +76,16 @@ $(document).ready( function() {
     const method = "POST";
     const url = $form.attr('action');
     const data = $form.serialize();
-    $.ajax({ method, url, data })
-    .done(function( msg ) {
-      console.log(`successfully posted ${data} to ${url}`);
+    $.ajax({ 
+      method, 
+      url, 
+      data, 
+      success: function() {
+        console.log(`successfully posted ${data} to ${url}`);
+      }
+    })
+    .fail(function() {
+      console.log(`failed to post ${data} to ${url}`);
     });
   });
 });
