@@ -33,35 +33,34 @@ $(document).ready( function() {
   const renderTweets = function(tweets) {
     const $tweetsContainer = $('#tweets-container');
     tweets.forEach( function(tweet) {
-      const $tweetElement = createTweetElement(tweet);
-      $tweetsContainer.append($tweetElement);
+      const tweetElement = createTweetElement(tweet);
+      $tweetsContainer.append(tweetElement);
     })
   };
   
   const createTweetElement = function(tweet) {
-    const $tweet = $(`<article class="tweet">`);
-    const markup = `
-    <header>
-      <div class="avatar-and-name">
-        <img src="${tweet.user.avatars}" alt="small-avatar" width="48" height="48">
-        <span class="name">${tweet.user.name}</span>
-      </div>
-      <div class="handle">
-        <span>${tweet.user.handle}</span>
-      </div>
-    </header>
-    <main>${tweet.content.text}</main>
-    <footer>
-      <span class="date">${tweet.created_at}</span>
-      <div>
-        <i class="fa-solid fa-flag"></i>
-        <i class="fa-solid fa-retweet"></i>
-        <i class="fa-solid fa-heart"></i>
-      </div>
-    </footer>
+    return `
+      <article class="tweet">
+        <header>
+          <div class="avatar-and-name">
+            <img src="${tweet.user.avatars}" alt="small-avatar" width="48" height="48">
+            <span class="name">${tweet.user.name}</span>
+          </div>
+          <div class="handle">
+            <span>${tweet.user.handle}</span>
+          </div>
+        </header>
+        <main>${tweet.content.text}</main>
+        <footer>
+          <span class="date">${tweet.created_at}</span>
+          <div>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     `;
-    $tweet.append(markup);
-    return $tweet;
   }
 
   const loadTweets = function() {
@@ -72,20 +71,12 @@ $(document).ready( function() {
 
   $('#tweet-form').on('submit', function(e) {
     e.preventDefault();
-    const $form = $(this);
-    const method = "POST";
-    const url = $form.attr('action');
-    const data = $form.serialize();
+    const $form = $('#tweet-form');
     $.ajax({ 
-      method, 
-      url, 
-      data, 
-      success: function() {
-        console.log(`successfully posted ${data} to ${url}`);
-      }
-    })
-    .fail(function() {
-      console.log(`failed to post ${data} to ${url}`);
+      method: "POST", 
+      url: $form.attr('action'), 
+      data: $form.serialize(),
     });
   });
+
 });
