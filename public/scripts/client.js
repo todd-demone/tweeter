@@ -63,15 +63,20 @@ $(document).ready( function() {
     $tweet.append(markup);
     return $tweet;
   }
+
+  const loadTweets = function() {
+
+  };
   
   renderTweets(data);
 
   $('#tweet-form').on('submit', function(e) {
     e.preventDefault();
     const $form = $(this);
-    const data = $form.serialize();
+    const method = "POST";
     const url = $form.attr('action');
-    $.post(url, data)
+    const data = $form.serialize();
+    $.ajax({ method, url, data })
     .done(function( msg ) {
       console.log(`successfully posted ${data} to ${url}`);
     });
