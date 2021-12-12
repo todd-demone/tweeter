@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready( function() {
+$(document).ready( () => {
   const data = [
     {
       "user": {
@@ -30,15 +30,15 @@ $(document).ready( function() {
     }
   ];
 
-  const renderTweets = function(tweets) {
+  const renderTweets = (tweets) => {
     const $tweetsContainer = $('#tweets-container');
-    tweets.forEach( function(tweet) {
+    tweets.forEach( (tweet) => {
       const tweetElement = createTweetElement(tweet);
       $tweetsContainer.append(tweetElement);
     })
   };
   
-  const createTweetElement = function(tweet) {
+  const createTweetElement = (tweet) => {
     return `
       <article class="tweet">
         <header>
@@ -61,22 +61,22 @@ $(document).ready( function() {
         </footer>
       </article>
     `;
-  }
+  };
 
-  const loadTweets = function() {
+  const loadTweets = () => {
 
   };
   
   renderTweets(data);
 
-  $('#tweet-form').on('submit', function(e) {
+  $('#tweet-form').on('submit', (e) => {
     e.preventDefault();
     const $form = $('#tweet-form');
     $.ajax({ 
       method: "POST", 
       url: $form.attr('action'), 
       data: $form.serialize(),
-    });
+    })
   });
 
 });
