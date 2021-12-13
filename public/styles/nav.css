@@ -19,11 +19,19 @@
   font-size: 2rem;
 }
 
-.navbar .cta {
+.navbar button.cta {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* get rid of button attributes */
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .fa-angles-down {

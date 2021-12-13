@@ -2,45 +2,35 @@
 <html lang="en">
 <head>
   <!-- Meta Information -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tweeter - Home Page</title>
 
-  <!-- Normalize CSS (External) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap">
   
-  <!-- Font Awesome CSS (External)-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-  <!-- Nav CSS -->
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css">
-
-  <!-- Header CSS -->
+  <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/nav.css">
   <link rel="stylesheet" href="/styles/header.css">
-
-  <!-- New Tweet CSS -->
   <link rel="stylesheet" href="/styles/new-tweet.css">
-
-  <!-- Tweet CSS -->
   <link rel="stylesheet" href="/styles/tweet.css">
 
-  <!-- jQuery JS (External) -->
+  <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <!-- timeago JS (External )-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
   
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script src="/scripts/client.js"></script>
+  <script src="/scripts/composer-char-counter.js"></script>
 
-  <!-- Character Counter JS -->
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
@@ -48,10 +38,10 @@
     <div class="logo">
       <span>tweeter</span>
     </div>
-    <div class="cta">
+    <button class="cta"> <!-- use button element instead of div for semantics -->
       <span><strong>Write</strong> a new tweet</span>
       <i class="fa-solid fa-angles-down"></i>
-    </div>
+    </button>
   </nav>
   <header class="banner">
       <img src="/images/profile-hex.png" alt="User avatar">
