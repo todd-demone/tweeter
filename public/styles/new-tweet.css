@@ -1,5 +1,6 @@
 .new-tweet {
   padding: 0 1rem;
+  display: none;
 }
 
 .new-tweet .error {
