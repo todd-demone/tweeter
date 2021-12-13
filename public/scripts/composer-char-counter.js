@@ -8,8 +8,16 @@ $(document).ready(() => {
     const $counterElement = $textareaElement.parent().find(".counter");
     const tweetLength = $textareaElement.val().length;
     const charactersRemaining = MAX_LENGTH - tweetLength;
+    const $errorElement = $textareaElement.parent().siblings('.error');
+    if (charactersRemaining < 0) {
+      $counterElement.addClass('negative');
+      $errorElement.children('.msg').html(`<i class="fa-solid fa-triangle-exclamation"></i>&nbsp; &nbsp; &nbsp;This tweet is too long. Please limit your tweet to 140 characters or less.&nbsp; &nbsp; &nbsp;<i class="fa-solid fa-triangle-exclamation"></i>`);
+      $errorElement.slideDown();
+    } else {
+      $counterElement.removeClass('negative');
+      $errorElement.slideUp();
+    }
 
-    charactersRemaining < 0 ? $counterElement.addClass('negative') : $counterElement.removeClass('negative');
     
     $counterElement.text(charactersRemaining);
   })
