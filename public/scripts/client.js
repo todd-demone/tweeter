@@ -46,6 +46,10 @@ $(document).ready( () => {
     `;
   };
 
+  $('.navbar button.cta').on('click', e => {
+    $('.new-tweet').slideToggle();
+  });
+
   $('#tweet-form').on('submit', e => {
     e.preventDefault();
     const $formElement = $('#tweet-form');
@@ -53,7 +57,6 @@ $(document).ready( () => {
     const $errorElement = $formElement.siblings('.error');
     const tweetString = $textareaElement.val();
     const tweetLength = tweetString.length;
-    $errorElement.slideUp();
     if (!tweetString) {
       $errorElement.children('.msg').html(`<i class="fa-solid fa-triangle-exclamation"></i>&nbsp; &nbsp; &nbsp;You cannot send an empty tweet. Please try again.&nbsp; &nbsp; &nbsp;<i class="fa-solid fa-triangle-exclamation"></i>`);
       $errorElement.slideDown()
@@ -68,7 +71,7 @@ $(document).ready( () => {
       url: $formElement.attr('action'), 
       data: $formElement.serialize(),
       success: () => {
-        
+        $errorElement.slideUp();
         $textareaElement.val('');
         $formElement.find(".counter").text('140');
         loadTweets();
