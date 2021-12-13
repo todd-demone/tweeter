@@ -14,14 +14,13 @@ $(document).ready( () => {
 
   $(window).on('scroll', e => {
     const st = $(window).scrollTop();
+    console.log(st);
     if (st > lastScrollTop) {
       $('.navbar button.scroll-to-top').show();
       $('.navbar button.cta').hide();
     } else if (st === 0) {
       $('.navbar button.cta').show();
       $('.navbar button.scroll-to-top').hide();
-    } else {
-      $('.navbar button.cta').show();
     }
     lastScrollTop = st;
   })
