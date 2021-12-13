@@ -61,6 +61,9 @@
   <main class="container">
 
     <section class="new-tweet">
+      <div class="error">
+        <span class="msg"></span>
+      </div>
       <form id="tweet-form" action='/tweets' method="post">
         <label for="tweet-text">What are you humming about?</label>
         <textarea rows="2" autofocus name="text" id="tweet-text"></textarea>
