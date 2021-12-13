@@ -19,12 +19,8 @@
   font-size: 2rem;
 }
 
-.navbar button.cta {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* get rid of button attributes */
+/* get rid of button attributes */
+.navbar button {
   background: none;
 	color: inherit;
 	border: none;
@@ -34,6 +30,25 @@
 	outline: inherit;
 }
 
+.navbar button.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .fa-angles-down {
    color: red;
+}
+
+.navbar button.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: .5rem;
+  right: .5rem;
+  height: 60px;
+  width: 60px;
+  background-color: #ff1402;
+  color: #ffffff;
+  border-radius: 50%; 
 }
