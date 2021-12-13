@@ -17,8 +17,10 @@ $(document).ready( () => {
     if (st > lastScrollTop) {
       $('.navbar button.scroll-to-top').show();
       $('.navbar button.cta').hide();
-    } else {
+    } else if (st === 0) {
+      $('.navbar button.cta').show();
       $('.navbar button.scroll-to-top').hide();
+    } else {
       $('.navbar button.cta').show();
     }
     lastScrollTop = st;
