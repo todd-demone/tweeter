@@ -1,26 +1,5 @@
 $(document).ready( () => {
   
-  const loadTweets = () => {
-    $.get('/tweets')
-      .done( tweets => {
-        $('#tweets-container').html(""); // less lag when this line is plcaed here vs in $.post below
-        renderTweets(tweets);
-      });
-  };
-
-  const renderTweets = tweets => {
-    tweets.forEach( tweet => {
-      const tweetElement = createTweetElement(tweet);
-      $('#tweets-container').append(tweetElement);
-    })
-  };
-  
-  const escape = str => {
-    let div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
-
   const createTweetElement = tweet => {
     return `
       <article class="tweet">
@@ -45,7 +24,28 @@ $(document).ready( () => {
       </article>
     `;
   };
+  
+  const escape = str => {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
+  const loadTweets = () => {
+    $.get('/tweets')
+      .done( tweets => {
+        $('#tweets-container').html(""); // less lag when this line is plcaed here vs in $.post below
+        renderTweets(tweets);
+      });
+  };
+
+  const renderTweets = tweets => {
+    tweets.forEach( tweet => {
+      const tweetElement = createTweetElement(tweet);
+      $('#tweets-container').append(tweetElement);
+    })
+  };
+  
   $('#tweet-form').on('submit', e => {
     e.preventDefault();
     const $formElement = $('#tweet-form');
