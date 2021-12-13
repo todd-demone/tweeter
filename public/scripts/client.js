@@ -3,7 +3,7 @@ $(document).ready( () => {
   const loadTweets = () => {
     $.get('/tweets')
       .done( tweets => {
-        $('#tweets-container').html(""); // less lag when this line is here vs in $.post below
+        $('#tweets-container').html(""); // less lag when this line is plcaed here vs in $.post below
         renderTweets(tweets);
       });
   };
@@ -50,20 +50,25 @@ $(document).ready( () => {
     e.preventDefault();
     const $formElement = $('#tweet-form');
     const $textareaElement = $formElement.children('#tweet-text')
+    const $errorElement = $formElement.siblings('.error');
     const tweetString = $textareaElement.val();
     const tweetLength = tweetString.length;
+    $errorElement.slideUp();
     if (!tweetString) {
-      alert('You cannot send an empty tweet. Please try again.');
+      $errorElement.children('.msg').html(`<i class="fa-solid fa-triangle-exclamation"></i>&nbsp; &nbsp; &nbsp;You cannot send an empty tweet. Please try again.&nbsp; &nbsp; &nbsp;<i class="fa-solid fa-triangle-exclamation"></i>`);
+      $errorElement.slideDown()
       return;
     }
     if (tweetLength > 140) {
-      alert('This tweet is too long. Please limit your tweet to 140 characters or less.')
+      $errorElement.children('.msg').html(`<i class="fa-solid fa-triangle-exclamation"></i>&nbsp; &nbsp; &nbsp;This tweet is too long. Please limit your tweet to 140 characters or less.&nbsp; &nbsp; &nbsp;<i class="fa-solid fa-triangle-exclamation"></i>`);
+      $errorElement.slideDown()
       return;
     }
     $.post({ 
       url: $formElement.attr('action'), 
       data: $formElement.serialize(),
       success: () => {
+        
         $textareaElement.val('');
         $formElement.find(".counter").text('140');
         loadTweets();
