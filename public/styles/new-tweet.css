@@ -1,5 +1,17 @@
 .new-tweet {
-  padding: 4rem 1rem 0;
+  padding: 0 1rem;
+}
+
+.new-tweet .error {
+  display: none;
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  border: 3.5px solid red;
+  color: red;
+}
+
+.new-tweet form {
+  margin-top: 4rem;
 }
 
 .new-tweet form label {
