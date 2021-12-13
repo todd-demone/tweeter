@@ -41,6 +41,17 @@ $(document).ready( () => {
   $('#tweet-form').on('submit', e => {
     e.preventDefault();
     const $form = $('#tweet-form');
+    const $textArea = $form.children('#tweet-text')
+    const tweetString = $textArea.val();
+    const tweetLength = tweetString.length;
+    if (!tweetString) {
+      alert('You cannot send an empty tweet. Please try again.');
+      return;
+    }
+    if (tweetLength > 140) {
+      alert('This tweet is too long. Please limit your tweet to 140 characters or less.')
+      return;
+    }
     $.ajax({ 
       method: "POST", 
       url: $form.attr('action'), 
@@ -48,6 +59,8 @@ $(document).ready( () => {
     })
       .done( () => {
         $('#tweets-container').html("");
+        $textArea.val('');
+        $textArea.parent().find(".counter").text('140');
         loadTweets();
       });
   });
