@@ -1,18 +1,26 @@
 $(document).ready( () => {
   
   const loadTweets = () => {
-    $.ajax('/tweets')
-      .done( tweets => renderTweets(tweets));
+    $.get('/tweets')
+      .done( tweets => {
+        $('#tweets-container').html(""); // less lag when this line is here vs in $.post below
+        renderTweets(tweets);
+      });
   };
 
   const renderTweets = tweets => {
-    const $tweetsContainer = $('#tweets-container');
-    tweets.forEach( (tweet) => {
+    tweets.forEach( tweet => {
       const tweetElement = createTweetElement(tweet);
-      $tweetsContainer.append(tweetElement);
+      $('#tweets-container').append(tweetElement);
     })
   };
   
+  const escape = str => {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = tweet => {
     return `
       <article class="tweet">
@@ -25,7 +33,7 @@ $(document).ready( () => {
             <span>${tweet.user.handle}</span>
           </div>
         </header>
-        <main>${tweet.content.text}</main>
+        <main>${escape(tweet.content.text)}</main>
         <footer>
           <span class="date">${timeago.format(tweet.created_at)}</span>
           <div>
@@ -37,12 +45,12 @@ $(document).ready( () => {
       </article>
     `;
   };
-  
+
   $('#tweet-form').on('submit', e => {
     e.preventDefault();
-    const $form = $('#tweet-form');
-    const $textArea = $form.children('#tweet-text')
-    const tweetString = $textArea.val();
+    const $formElement = $('#tweet-form');
+    const $textareaElement = $formElement.children('#tweet-text')
+    const tweetString = $textareaElement.val();
     const tweetLength = tweetString.length;
     if (!tweetString) {
       alert('You cannot send an empty tweet. Please try again.');
@@ -52,18 +60,17 @@ $(document).ready( () => {
       alert('This tweet is too long. Please limit your tweet to 140 characters or less.')
       return;
     }
-    $.ajax({ 
-      method: "POST", 
-      url: $form.attr('action'), 
-      data: $form.serialize(),
-    })
-      .done( () => {
-        $('#tweets-container').html("");
-        $textArea.val('');
-        $textArea.parent().find(".counter").text('140');
+    $.post({ 
+      url: $formElement.attr('action'), 
+      data: $formElement.serialize(),
+      success: () => {
+        $textareaElement.val('');
+        $formElement.find(".counter").text('140');
         loadTweets();
-      });
+      },
+    })
   });
-
+  
   loadTweets();
+
 });
