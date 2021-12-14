@@ -21,16 +21,15 @@
   <link rel="stylesheet" href="/styles/nav.css">
   <link rel="stylesheet" href="/styles/header.css">
   <link rel="stylesheet" href="/styles/new-tweet.css">
-  <link rel="stylesheet" href="/styles/tweet.css">
+  <link rel="stylesheet" href="/styles/tweets-container.css">
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
   
   <!-- App JS -->
-  <script src="/scripts/nav.js"></script>
   <script src="/scripts/client.js"></script>
-  <script src="/scripts/char-counter.js"></script>
+  <script src="/scripts/character-counter.js"></script>
 
 </head>
 
@@ -40,7 +39,7 @@
       <span>tweeter</span>
     </div>
     <div>
-      <button class="cta"> <!-- use button element instead of div for semantics -->
+      <button class="toggle-tweet-button"> <!-- use button element instead of div for semantics -->
         <span><strong>Write</strong> a new tweet</span>
         <div class="arrow bounce">
           <i class="fa-solid fa-angles-down"></i>
@@ -60,7 +59,11 @@
 
     <section class="new-tweet">
       <div class="error">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        &nbsp; &nbsp; &nbsp;
         <span class="msg"></span>
+        &nbsp; &nbsp; &nbsp;
+        <i class="fa-solid fa-triangle-exclamation"></i>
       </div>
       <form id="tweet-form" action='/tweets' method="post">
         <label for="tweet-text">What are you humming about?</label>
