@@ -41,14 +41,32 @@
    color: red;
 }
 
+
+
 .navbar button.scroll-to-top {
   display: none;
   position: fixed;
-  bottom: .5rem;
-  right: .5rem;
+  bottom: 1rem;
+  right: 1rem;
   height: 60px;
   width: 60px;
   background-color: #ff1402;
   color: #ffffff;
   border-radius: 50%; 
+}
+
+.arrow {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
