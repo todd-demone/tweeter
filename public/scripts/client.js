@@ -1,5 +1,10 @@
-$(document).ready( () => {
+$(document).ready(() => {
   
+  //////////////////////////
+  // FUNCTION DEFINITIONS //
+  //////////////////////////
+
+  // Receives a single tweet (Object) and returns html (String) representing that tweet.
   const createTweetElement = tweet => {
     return `
       <article class="tweet">
@@ -12,7 +17,7 @@ $(document).ready( () => {
             <span>${tweet.user.handle}</span>
           </div>
         </header>
-        <main>${escape(tweet.content.text)}</main>
+        <main>${escapeInputText(tweet.content.text)}</main>
         <footer>
           <span class="date">${timeago.format(tweet.created_at)}</span>
           <div>
@@ -24,57 +29,132 @@ $(document).ready( () => {
       </article>
     `;
   };
+
   
-  const escape = str => {
+  // Receives user input (String) and returns escaped text (String); prevents cross-site scripting (xss).
+  const escapeInputText = str => {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+
+  // GET request for tweets array; if success, calls renderTweets to render tweets to page.
   const loadTweets = () => {
-    $.get('/tweets')
-      .done( tweets => {
-        $('#tweets-container').html(""); // less lag when this line is plcaed here vs in $.post below
+    $.get({
+      url: '/tweets',
+      success: tweets => {
+        $('#tweets-container').html(""); // less lag when this line is placed here vs in $.post below
         renderTweets(tweets);
-      });
+      },
+    });
   };
 
+
+  // Receives tweets (Array) and appends each tweet to the page.
   const renderTweets = tweets => {
-    tweets.forEach( tweet => {
+    tweets.forEach(tweet => {
       const tweetElement = createTweetElement(tweet);
       $('#tweets-container').append(tweetElement);
-    })
+    });
   };
 
-  $('#tweet-form').on('submit', e => {
-    e.preventDefault();
-    const $formElement = $('#tweet-form');
-    const $textareaElement = $formElement.children('#tweet-text')
-    const $errorElement = $formElement.siblings('.error');
-    const tweetString = $textareaElement.val();
-    const tweetLength = tweetString.length;
-    if (!tweetString) {
-      $errorElement.children('.msg').html(`<i class="fa-solid fa-triangle-exclamation"></i>&nbsp; &nbsp; &nbsp;You cannot send an empty tweet. Please try again.&nbsp; &nbsp; &nbsp;<i class="fa-solid fa-triangle-exclamation"></i>`);
-      $errorElement.slideDown()
-      return;
-    }
-    if (tweetLength > 140) {
-      $errorElement.children('.msg').html(`<i class="fa-solid fa-triangle-exclamation"></i>&nbsp; &nbsp; &nbsp;This tweet is too long. Please limit your tweet to 140 characters or less.&nbsp; &nbsp; &nbsp;<i class="fa-solid fa-triangle-exclamation"></i>`);
-      $errorElement.slideDown()
-      return;
-    }
-    $.post({ 
-      url: $formElement.attr('action'), 
-      data: $formElement.serialize(),
-      success: () => {
-        $errorElement.slideUp();
-        $textareaElement.val('');
-        $formElement.find(".counter").text('140');
-        loadTweets();
-      },
-    })
-  });
+
+  // Receives a message (String) and displays the message above the new tweet box.
+  const sendErrorMessage = message => {
+    const $errorBox = $('.new-tweet .error');
+    const $errorMessage = $errorBox.children('.msg');
+    $errorMessage.html(message);
+    $errorBox.slideDown();
+    return false;
+  };
+
+
+  //////////////////////
+  // EVENT METHODS    //
+  //////////////////////
+
+
+  // When the tweet button is clcked, this event method validates the tweet text and, if there are no errors, POSTs serialized tweet data to the server;
+    $('#tweet-form').on('submit', e => {
+      e.preventDefault();
+      const $tweetForm = $(e.currentTarget);
+      const $tweetText = $tweetForm.children('#tweet-text');
+      const tweetString = $tweetText.val();
+      const tweetLength = tweetString.length;
+      
+      if (!tweetString) {
+        sendErrorMessage("You can't send an empty tweet.");
+      }
+      if (tweetLength > 140) {
+        sendErrorMessage("You can't send a tweet longer than 140 characters.");
+      }
   
+      $.post({
+        url: $tweetForm.attr('action'),
+        data: $tweetForm.serialize(),
+        success: () => {
+          const $errorBox = $('.new-tweet .error');
+          $errorBox.slideUp();
+          $tweetText.val('');
+          $tweetForm.find(".counter").text('140');
+          loadTweets();
+        },
+      });
+    });
+
+
+  // When the "write a new tweet" button is clicked, this event method shows/hides the "what are you humming about?" box.
+  $('.navbar button.toggle-tweet-button').on('click', () => {
+    $('.new-tweet').slideToggle();
+    document.getElementById('tweet-text').focus();
+  });
+
+
+  // When the page is refreshed, this event method scrolls to the top of the screen. This is necessary b/c the "write a new tweet" button disappears as you scroll down, and if you refresh at a point where you've scrolled halfway down the page then the write a new tweet is still not displayed and could cause some confusion.
+  $(window).on('unload', () => {
+    $(window).scrollTop(0);
+  });
+
+
+  // When the user scrolls a sufficient distance, this event method shows the scroll-to-top button and hides the "write a new tweet" button.
+  let lastScrollTop = 0;
+  $(window).on('scroll', e => {
+    const st = $(e.currentTarget).scrollTop();
+    $scrollToTopButton = $('.navbar button.scroll-to-top');
+    $toggleTweetButton = $scrollToTopButton.siblings('button.toggle-tweet-button');
+    if (st < 250) {
+      $scrollToTopButton.hide('slow');
+      $toggleTweetButton.slideDown();
+    } else if (st > lastScrollTop) {
+      $scrollToTopButton.show('slow');
+      $toggleTweetButton.slideUp();
+    }
+    lastScrollTop = st;
+  });
+
+  
+  // When the scroll-to-top button is clicked, this event method scrolls to the top of the screen, hides the scroll-to-top button and shows the "write a new tweet" button.
+  $('.navbar button.scroll-to-top').on('click', e => {
+    $scrollToTopButton = $(e.currentTarget);
+    $toggleTweetButton = $scrollToTopButton.siblings('button.toggle-tweet-button');
+    $('html, body').animate(
+      { scrollTop: 0 },
+      () => {
+        $scrollToTopButton.hide('slow');
+        $toggleTweetButton.slideDown();
+        $('.new-tweet').slideDown();
+        document.getElementById('tweet-text').focus();
+
+      }
+    );
+    return false;
+  });
+
+  //////////////////////
+  // DRIVER CODE      //
+  //////////////////////
+
   loadTweets();
 
 });
