@@ -128,7 +128,6 @@ $(document).ready(() => {
       $toggleTweetButton.slideDown();
     } else if (st > lastScrollTop) {
       $scrollToTopButton.show('slow');
-      console.log(st);
       $toggleTweetButton.slideUp();
     }
     lastScrollTop = st;
