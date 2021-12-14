@@ -16,11 +16,11 @@ $(document).ready( () => {
     const st = $(window).scrollTop();
     console.log(st);
     if (st > lastScrollTop) {
-      $('.navbar button.scroll-to-top').show();
-      $('.navbar button.cta').hide();
+      $('.navbar button.scroll-to-top').slideDown();
+      $('.navbar button.cta').slideUp();
     } else if (st === 0) {
-      $('.navbar button.cta').show();
-      $('.navbar button.scroll-to-top').hide();
+      $('.navbar button.scroll-to-top').slideUp();
+      $('.navbar button.cta').slideDown();
     }
     lastScrollTop = st;
   })
@@ -29,10 +29,10 @@ $(document).ready( () => {
     $('html, body').animate(
       { scrollTop: 0 }, 
       () => {
-          $('.navbar button.cta').show();
-          $('.navbar button.scroll-to-top').hide();
-          $('.new-tweet').slideDown();
-          document.getElementById('tweet-text').focus();
+        $('.navbar button.scroll-to-top').slideUp();
+        $('.navbar button.cta').slideDown();
+        $('.new-tweet').slideDown();
+        document.getElementById('tweet-text').focus();
 
       } 
     );
