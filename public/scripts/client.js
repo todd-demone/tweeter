@@ -123,7 +123,7 @@ $(document).ready(() => {
     const st = $(e.currentTarget).scrollTop();
     $scrollToTopButton = $('.navbar button.scroll-to-top');
     $toggleTweetButton = $scrollToTopButton.siblings('button.toggle-tweet-button');
-    if (st < 250) {
+    if (st < 100) {
       $scrollToTopButton.hide('slow');
       $toggleTweetButton.slideDown();
     } else if (st > lastScrollTop) {
