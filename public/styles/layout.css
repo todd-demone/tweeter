@@ -26,7 +26,38 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+.outer-flex-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+}
+
 main.container {
   width: 90%;
   margin: 0 auto;
 }
+
+/* MEDIA QUERIES */
+
+@media(min-width: 1024px) {
+  .outer-flex-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 120px;
+  }
+
+  header.banner {
+    width: 34%;
+  }
+  
+  main.container {
+    width: 66%;
+  }
+}
+
+
+
+
