@@ -48,13 +48,12 @@ main.container {
     flex-wrap: wrap;
     top: 120px;
   }
-
-  header.banner {
-    width: 34%;
-  }
   
   main.container {
     width: 66%;
+    padding: 0 1.5rem;
+    position: absolute;
+    left: 34%;
   }
 }
 
