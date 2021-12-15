@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
   
   //////////////////////////
   // FUNCTION DEFINITIONS //
@@ -91,13 +91,12 @@ $(document).ready(() => {
       }
   
       $.post({
-        url: $tweetForm.attr('action'),
+        url: '/tweets',
         data: $tweetForm.serialize(),
         success: () => {
           const $errorBox = $('.new-tweet .error');
           $errorBox.slideUp();
-          $tweetText.val('');
-          $tweetForm.find(".counter").text('140');
+          $tweetForm.trigger('reset');
           loadTweets();
         },
       });
@@ -123,7 +122,7 @@ $(document).ready(() => {
     const st = $(e.currentTarget).scrollTop();
     $scrollToTopButton = $('.navbar button.scroll-to-top');
     $toggleTweetButton = $scrollToTopButton.siblings('button.toggle-tweet-button');
-    if (st < 400) {
+    if (st < 100) {
       $scrollToTopButton.hide('slow');
       $toggleTweetButton.slideDown();
     } else if (st > lastScrollTop) {
@@ -139,13 +138,16 @@ $(document).ready(() => {
     $scrollToTopButton = $(e.currentTarget);
     $toggleTweetButton = $scrollToTopButton.siblings('button.toggle-tweet-button');
     $('html, body').animate(
-      { scrollTop: 0 },
-      () => {
-        $scrollToTopButton.hide('slow');
-        $toggleTweetButton.slideDown();
-        $('.new-tweet').slideDown();
-        document.getElementById('tweet-text').focus();
-
+      { 
+        scrollTop: 0,
+      },
+      {
+        done: () => {
+          $scrollToTopButton.hide('slow');
+          $toggleTweetButton.slideDown();
+          $('.new-tweet').slideDown();
+          $('#tweet-text').focus();
+        }
       }
     );
     return false;
