@@ -66,7 +66,8 @@ $(() => {
     const $errorMessage = $errorBox.children('.msg');
     $errorMessage.html(message);
     $errorBox.slideDown();
-    return false;
+    $('#tweet-text').focus();
+    $('#tweet-form').addClass('short-margin-top');
   };
 
 
@@ -76,37 +77,41 @@ $(() => {
 
 
   // When the tweet button is clcked, this event method validates the tweet text and, if there are no errors, POSTs serialized tweet data to the server;
-    $('#tweet-form').on('submit', e => {
-      e.preventDefault();
-      const $tweetForm = $(e.currentTarget);
-      const $tweetText = $tweetForm.children('#tweet-text');
-      const tweetString = $tweetText.val();
-      const tweetLength = tweetString.length;
-      
-      if (!tweetString) {
-        sendErrorMessage("You can't send an empty tweet.");
-      }
-      if (tweetLength > 140) {
-        sendErrorMessage("You can't send a tweet longer than 140 characters.");
-      }
-  
-      $.post({
-        url: '/tweets',
-        data: $tweetForm.serialize(),
-        success: () => {
-          const $errorBox = $('.new-tweet .error');
-          $errorBox.slideUp();
-          $tweetForm.trigger('reset');
-          loadTweets();
-        },
-      });
+  $('#tweet-form').on('submit', e => {
+    e.preventDefault();
+    const $tweetForm = $(e.currentTarget);
+    const $tweetText = $tweetForm.children('#tweet-text');
+    const tweetString = $tweetText.val();
+    const tweetLength = tweetString.length;
+    
+    if (!tweetString) {
+      sendErrorMessage("You can't send an empty tweet.");
+      return false;
+    }
+    if (tweetLength > 140) {
+      sendErrorMessage("Tweets can't exceed 140 characters.");
+      return false;
+    }
+
+    $.post({
+      url: '/tweets',
+      data: $tweetForm.serialize(),
+      success: () => {
+        const $errorBox = $('.new-tweet .error');
+        $errorBox.slideUp();
+        $('#tweet-form').removeClass('short-margin-top');
+        $tweetForm.trigger('reset');
+        $tweetForm.find(".counter").text('140');
+        loadTweets();
+      },
     });
+  });
 
 
   // When the "write a new tweet" button is clicked, this event method shows/hides the "what are you humming about?" box.
   $('.navbar button.toggle-tweet-button').on('click', () => {
     $('.new-tweet').slideToggle();
-    document.getElementById('tweet-text').focus();
+    $('#tweet-text').focus();
   });
 
 
@@ -117,19 +122,19 @@ $(() => {
 
 
   // When the user scrolls a sufficient distance, this event method shows the scroll-to-top button and hides the "write a new tweet" button.
-  let lastScrollTop = 0;
   $(window).on('scroll', e => {
-    const st = $(e.currentTarget).scrollTop();
+    const scrollPosition = $(e.currentTarget).scrollTop();
     $scrollToTopButton = $('.navbar button.scroll-to-top');
     $toggleTweetButton = $scrollToTopButton.siblings('button.toggle-tweet-button');
-    if (st > lastScrollTop) {
-      $scrollToTopButton.show('slow');
-      $toggleTweetButton.slideUp();
-    } else if (st === 0) {
-        $scrollToTopButton.hide('slow');
-        $toggleTweetButton.slideDown();
+    if (scrollPosition > 150) {
+      $scrollToTopButton.show('fast');
+      $toggleTweetButton.hide('fast');
+      $('.navbar .logo').addClass('logo-center');
+    } else {
+      $scrollToTopButton.hide('fast');
+      $toggleTweetButton.show('fast');
+      $('.navbar .logo').removeClass('logo-center');
     }
-    lastScrollTop = st;
   });
 
   
@@ -138,7 +143,7 @@ $(() => {
     $scrollToTopButton = $(e.currentTarget);
     $toggleTweetButton = $scrollToTopButton.siblings('button.toggle-tweet-button');
     $('html, body').animate(
-      { 
+      {
         scrollTop: 0,
       },
       {
@@ -152,6 +157,9 @@ $(() => {
     );
     return false;
   });
+
+  
+
 
   //////////////////////
   // DRIVER CODE      //
