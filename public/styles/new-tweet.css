@@ -5,14 +5,23 @@
 
 .new-tweet .error {
   display: none;
-  margin-top: 2rem;
-  padding: 1rem 1.5rem;
-  border: 3.5px solid red;
-  color: red;
+  margin-top: 1rem;
+  padding: .75rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
 }
 
 .new-tweet form {
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
+
+.short-margin-top {
+  margin-top: 1rem !important;
 }
 
 .new-tweet form label {
@@ -21,6 +30,7 @@
 
 #tweet-text,
 #tweet-text:focus {
+  height: 5rem;
   width: 100%;
   margin-top: 0.5rem;
   padding: 0 0 .5rem;
@@ -63,4 +73,24 @@
 
 .new-tweet footer .counter.negative {
   color: red;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 600px) {
+  
+  .new-tweet .error {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .new-tweet form {
+    margin-top: 4rem;
+  }
+
+  #tweet-text,
+  #tweet-text:focus {
+  height: 3.5rem;
+  }
 }
