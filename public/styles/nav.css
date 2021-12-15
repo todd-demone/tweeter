@@ -1,11 +1,11 @@
 .navbar {
-  height: 120px;
+  height: 100px;
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 99;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 2rem;
   background-color: #4056A1;
   color: #FFFFFF;
@@ -16,7 +16,20 @@
   flex-direction: column;
   justify-content: center;
   font-family: 'Bungee', cursive;
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+.navbar .logo.logo-center {
+  width: 100%;
+  text-align: center;  
+}
+
+.navbar button.toggle-tweet-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
 }
 
 /* get rid of button attributes */
@@ -30,12 +43,7 @@
 	outline: inherit;
 }
 
-.navbar button.toggle-tweet-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .fa-angles-down {
    color: red;
@@ -68,5 +76,33 @@
   }
   60% {
     transform: translateY(-5px);
+  }
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 375px) {
+  .navbar button.toggle-tweet-button {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .navbar {
+    justify-content: space-between;   
+  }
+
+  .navbar .logo {
+    font-size: 2rem;
+  }
+
+  .navbar button.toggle-tweet-button {
+    font-size: 1.5rem;
+  }
+} 
+
+@media (min-width: 1024px) {
+  .navbar {
+    height: 120px;    
   }
 }
