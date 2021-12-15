@@ -1,6 +1,6 @@
 const MAX_LENGTH = 140;
 
-$(document).ready(() => {
+$(() => {
   
   // When the textarea contents are changed by the user, this event method updates the new tweet box's character counter with the # of allowable characters remaining.
   // When the new textarea contains > 140 characters, change the character counter's colour to red and show the error message.
