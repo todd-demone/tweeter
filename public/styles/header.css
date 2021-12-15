@@ -1,8 +1,8 @@
 .banner {
-  height: 520px;
+  height: 335px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   padding: 2rem;
   background-color: #deac56;
@@ -10,9 +10,34 @@
   color: #ffffff;
 }
 
-.banner h2 {
-  margin: 2rem 0 0;
+.banner img {
+  height: 150px;
 }
+
+.banner h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
 .banner h2 .light-heading {
   font-weight: 300;
 }
+
+/* MEDIA QUERIES */
+
+@media(min-width: 600px) {
+  
+  .banner {
+    height: 520px;
+    justify-content: space-around;
+  }
+  
+  .banner img {
+    height: 256px;
+  }
+
+  .banner h2 {
+    font-size: 2.25rem;
+  }
+}
+
