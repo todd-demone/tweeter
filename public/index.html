@@ -50,33 +50,27 @@
       </button>
     </div>
   </nav>
-  <header class="banner">
-      <img src="/images/profile-hex.png" alt="User avatar">
-      <h2>Rhoda <span class="light-heading">Jacobs</span></h2>
-  </header>
-
-  <main class="container">
-
-    <section class="new-tweet">
-      <div class="error">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        &nbsp; &nbsp; &nbsp;
-        <span class="msg"></span>
-        &nbsp; &nbsp; &nbsp;
-        <i class="fa-solid fa-triangle-exclamation"></i>
-      </div>
-      <form id="tweet-form">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea rows="2" autofocus name="text" id="tweet-text"></textarea>
-        <footer>
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </footer>
-      </form>
-    </section>
-
-    <section id="tweets-container"></section>
-
-  </main>
+  <div class="outer-flex-container">
+    <header class="banner">
+        <img src="/images/profile-hex.png" alt="User avatar">
+        <h2>Rhoda <span class="light-heading">Jacobs</span></h2>
+    </header>
+    <main class="container">
+      <section class="new-tweet">
+        <div class="error">
+          <span class="msg"></span>
+        </div>
+        <form id="tweet-form">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea autofocus name="text" id="tweet-text"></textarea>
+          <footer>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </footer>
+        </form>
+      </section>
+      <section id="tweets-container"></section>
+    </main>
+  </div>
 </body>
 </html>
