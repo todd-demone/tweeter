@@ -101,11 +101,7 @@
 }
 
 @media (min-width: 1024px) {
-
-  #tweets-container {
-    margin-top: 0;
-  }
-
+  
   .tweet:first-child {
     margin-top: 0;
   }
