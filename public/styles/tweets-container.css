@@ -13,6 +13,10 @@
   box-shadow: 6px 6px #c9cbde;
 }
 
+.tweet:first-child {
+  margin-top: 0;
+}
+
 .tweet header {
   margin-top: 1rem;
   padding: 0 0.5rem;
@@ -108,6 +112,6 @@
 
 @media (min-width: 1024px) {
   #tweets-container {
-    margin-top: 2rem;
+    margin-top: 0;
   }
 }
