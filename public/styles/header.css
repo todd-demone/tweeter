@@ -2,7 +2,7 @@
   height: 335px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 2rem;
   background-color: #deac56;
@@ -17,6 +17,7 @@
 .banner h2 {
   font-size: 1.5rem;
   text-align: center;
+  margin: 0;
 }
 
 .banner h2 .light-heading {
@@ -29,7 +30,6 @@
   
   .banner {
     height: 520px;
-    justify-content: space-around;
   }
   
   .banner img {
@@ -42,9 +42,21 @@
 }
 
 @media (min-width: 1024px) {
-  header.banner {
-    height: 100vh;
-    width: 34%;
+  
+  .outer-banner {
+    width: 40%;
+    margin-top: 5rem;
     position: fixed;
+    top: 120px;
+  }
+
+  .banner {
+    max-width: 360px;
+    max-height: 360px;
+    margin: 0 auto 0 0;
+  }
+
+  .banner img {
+    height: 200px;
   }
 }
