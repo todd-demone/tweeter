@@ -1,0 +1,65 @@
+.banner-container {
+  margin-top: 6.25rem;
+}
+
+.banner {
+  height: 335px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #deac56;
+  background-image: url('/images/asfalt-light.png');
+  color: #ffffff;
+}
+
+.banner img {
+  height: 150px;
+}
+
+.banner h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+.banner h2 .light-heading {
+  font-weight: 300;
+}
+
+/* MEDIA QUERIES */
+
+@media(min-width: 600px) {
+  
+  .banner {
+    height: 520px;
+  }
+  
+  .banner img {
+    height: 256px;
+  }
+
+  .banner h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  .banner-container {
+    width: 40%;
+    margin-top: 0;
+    padding: 0 0 0 2rem;
+  }
+
+  .banner {
+    position: sticky;
+    top: 12.5rem;
+    max-width: 360px;
+    max-height: 360px;
+  }
+
+  .banner img {
+    height: 200px;
+  }
+}
