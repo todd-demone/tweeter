@@ -15,12 +15,9 @@ $(() => {
       $counter.addClass('negative');
       $errorBox.children('.msg').html("Tweets can't exceed 140 characters.");
       $errorBox.slideDown();
-      $('#tweet-form').addClass('short-margin-top');
-
     } else {
       $counter.removeClass('negative');
       $errorBox.slideUp();
-      $('#tweet-form').removeClass('short-margin-top');
     }
     
     $counter.text(charactersRemaining);
