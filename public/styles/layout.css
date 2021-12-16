@@ -26,43 +26,32 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-.outer-flex-container {
+.hm-container {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  position: absolute;
-  top: 100px;
-  width: 100%;
+  max-width: 1265px;
+  margin: 0 auto;
 }
 
-main.container {
-  width: 90%;
-  margin: 0 auto;
+main.main-container {
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+  position: relative;
 }
 
 /* MEDIA QUERIES */
 
-@media(min-width: 1060px) {
-  .outer-flex-container {
+@media(min-width: 1024px) {
+
+  .hm-container {
     flex-direction: row;
     flex-wrap: wrap;
-    top: 120px;
-    left: 0;
-    right: 0;
-    max-width: 1265px;
-    margin: 0 auto;
-    padding: 0 2rem;
   }
   
-  main.container {
+  main.main-container {
     width: 60%;
-    padding: 0 0 0 1.5rem;
-    position: absolute;
-    right: 1.5rem;
-    margin-top: 5rem;
+    margin-top: 12.5rem;
   }
+  
 }
-
-
-
-
