@@ -19,9 +19,10 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css">
   <link rel="stylesheet" href="/styles/nav.css">
-  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/banner.css">
   <link rel="stylesheet" href="/styles/new-tweet.css">
   <link rel="stylesheet" href="/styles/tweets-container.css">
+  <link rel="stylesheet" href="/styles/footer.css">
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -34,7 +35,7 @@
 </head>
 
 <body>
-  <div class="outer-navbar">
+  <div class="navbar-container">
     <nav class="navbar">
       <div class="logo">
         <span>tweeter</span>
@@ -52,14 +53,14 @@
       </div>
     </nav>
   </div>
-  <div class="outer-flex-container">
-    <header class="outer-banner">
+  <div class="hm-container">
+    <header class="banner-container">
       <div class="banner">
         <img src="/images/profile-hex.png" alt="User avatar">
         <h2>Rhoda <span class="light-heading">Jacobs</span></h2>
       </div>
     </header>
-    <main class="container">
+    <main class="main-container">
       <section class="new-tweet">
         <div class="error">
           <span class="msg"></span>
@@ -74,7 +75,13 @@
         </form>
       </section>
       <section id="tweets-container"></section>
+      
     </main>
+  </div>
+  <div class="footer-container">
+    <footer class="footer">
+      <span>Copyright © 2022 | Tweeter Inc. | Todd Demone Web Development</span>
+    </footer>
   </div>
 </body>
 </html>
