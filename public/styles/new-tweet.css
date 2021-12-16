@@ -1,26 +1,18 @@
 .new-tweet {
   padding: 0 1rem;
   display: none;
+  margin-top: 2rem;
 }
 
 .new-tweet .error {
   display: none;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: .75rem;
   font-size: 1rem;
   text-align: center;
   color: #721c24;
   background-color: #f8d7da;
-  /* border-color: #f5c6cb; */
   border: 3.5px solid #f5c6cb;
-}
-
-.new-tweet form {
-  margin-top: 2rem;
-}
-
-.short-margin-top {
-  margin-top: 1rem !important;
 }
 
 .new-tweet form label {
@@ -77,33 +69,19 @@
 /* MEDIA QUERIES */
 
 @media (min-width: 600px) {
-  
+
   .new-tweet .error {
-    margin-top: 2rem;
     padding: 1rem 1.5rem;
     font-size: 1.5rem;
   }
 
-  .new-tweet form {
-    margin-top: 4rem;
-  }
-
-  #tweet-text,
-  #tweet-text:focus {
-  height: 3.5rem;
-  }
 }
 
-@media(min-width: 1060px) {
+@media(min-width: 1024px) {
+
   .new-tweet {
+    margin-top: 0;
     margin-bottom: 2rem;
   }
-
-  .new-tweet .error {
-  margin-top: 0;
-}
-
-  .new-tweet form {
-    margin-top: 0;
-  }
+  
 }
