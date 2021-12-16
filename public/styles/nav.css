@@ -1,7 +1,5 @@
-.outer-navbar {
+.navbar-container {
   background-color: #4056A1;
-  width: 100%;
-  height: 100px;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,12 +8,13 @@
 }
 
 .navbar {
-  margin: 0 auto;
-  max-width: 1265px;
+  height: 6.25rem;
   width: 100%;
+  max-width: 1265px;
+  margin: 0 auto;
+  padding: 2rem;
   display: flex;
   justify-content: space-around;
-  padding: 2rem;
   color: #FFFFFF;
 }
 
@@ -32,14 +31,6 @@
   text-align: center;  
 }
 
-.navbar button.toggle-tweet-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1rem;
-}
-
 /* get rid of button attributes */
 .navbar button {
   background: none;
@@ -51,20 +42,16 @@
 	outline: inherit;
 }
 
-.fa-angles-down {
-   color: red;
+.navbar button.toggle-tweet-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
 }
 
-.navbar button.scroll-to-top {
-  display: none;
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  height: 60px;
-  width: 60px;
-  background-color: #ff1402;
-  color: #ffffff;
-  border-radius: 50%; 
+.fa-angles-down {
+   color: red;
 }
 
 .arrow {
@@ -83,15 +70,30 @@
   }
 }
 
+.navbar button.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  height: 60px;
+  width: 60px;
+  background-color: #ff1402;
+  color: #ffffff;
+  border-radius: 50%; 
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 375px) {
+
   .navbar button.toggle-tweet-button {
     font-size: 1.25rem;
   }
+  
 }
 
 @media (min-width: 600px) {
+
   .navbar {
     justify-content: space-between;   
   }
@@ -103,19 +105,18 @@
   .navbar button.toggle-tweet-button {
     font-size: 1.5rem;
   }
+
 } 
 
-@media (min-width: 1060px) {
-  .outer-navbar {
-    height: 120px;
-  }
-  
+@media (min-width: 1024px) {
+
   .navbar {
-    height: 120px;    
+    height: 7.5rem;    
   }
 
   .navbar .logo.logo-center {
     width: auto;
     text-align: left;  
   }
+
 }
