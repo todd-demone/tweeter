@@ -11,9 +11,8 @@
   text-align: center;
   color: #721c24;
   background-color: #f8d7da;
-  border-color: #f5c6cb;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
+  /* border-color: #f5c6cb; */
+  border: 3.5px solid #f5c6cb;
 }
 
 .new-tweet form {
@@ -95,11 +94,15 @@
   }
 }
 
-@media(min-width: 1024px) {
+@media(min-width: 1060px) {
   .new-tweet {
     margin-bottom: 2rem;
   }
-  
+
+  .new-tweet .error {
+  margin-top: 0;
+}
+
   .new-tweet form {
     margin-top: 0;
   }
