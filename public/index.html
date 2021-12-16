@@ -4,7 +4,7 @@
   <!-- Meta Information -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Tweeter - Home Page</title>
 
   <!-- External CSS -->
@@ -34,26 +34,30 @@
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="logo">
-      <span>tweeter</span>
-    </div>
-    <div>
-      <button class="toggle-tweet-button"> <!-- use button element instead of div for semantics -->
-        <span><strong>Write</strong> a new tweet</span>
-        <div class="arrow bounce">
-          <i class="fa-solid fa-angles-down"></i>
-        </div>
-      </button>
-      <button class="scroll-to-top">
-        <i class="fa-solid fa-angles-up"></i>
-      </button>
-    </div>
-  </nav>
+  <div class="outer-navbar">
+    <nav class="navbar">
+      <div class="logo">
+        <span>tweeter</span>
+      </div>
+      <div>
+        <button class="toggle-tweet-button"> <!-- use button element instead of div for semantics -->
+          <span><strong>Write</strong> a new tweet</span>
+          <div class="arrow bounce">
+            <i class="fa-solid fa-angles-down"></i>
+          </div>
+        </button>
+        <button class="scroll-to-top">
+          <i class="fa-solid fa-angles-up"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
   <div class="outer-flex-container">
-    <header class="banner">
+    <header class="outer-banner">
+      <div class="banner">
         <img src="/images/profile-hex.png" alt="User avatar">
         <h2>Rhoda <span class="light-heading">Jacobs</span></h2>
+      </div>
     </header>
     <main class="container">
       <section class="new-tweet">
