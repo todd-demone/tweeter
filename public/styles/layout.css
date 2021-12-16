@@ -42,7 +42,7 @@ main.container {
 
 /* MEDIA QUERIES */
 
-@media(min-width: 1024px) {
+@media(min-width: 1060px) {
   .outer-flex-container {
     flex-direction: row;
     flex-wrap: wrap;
