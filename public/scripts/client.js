@@ -67,7 +67,6 @@ $(() => {
     $errorMessage.html(message);
     $errorBox.slideDown();
     $('#tweet-text').focus();
-    $('#tweet-form').addClass('short-margin-top');
   };
 
 
@@ -99,7 +98,6 @@ $(() => {
       success: () => {
         const $errorBox = $('.new-tweet .error');
         $errorBox.slideUp();
-        $('#tweet-form').removeClass('short-margin-top');
         $tweetForm.trigger('reset');
         $tweetForm.find(".counter").text('140');
         loadTweets();
