@@ -47,13 +47,19 @@ main.container {
     flex-direction: row;
     flex-wrap: wrap;
     top: 120px;
+    left: 0;
+    right: 0;
+    max-width: 1265px;
+    margin: 0 auto;
+    padding: 0 2rem;
   }
   
   main.container {
-    width: 66%;
-    padding: 0 1.5rem;
+    width: 60%;
+    padding: 0 0 0 1.5rem;
     position: absolute;
-    left: 34%;
+    right: 1.5rem;
+    margin-top: 5rem;
   }
 }
 
