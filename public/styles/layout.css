@@ -32,6 +32,7 @@ body {
   flex-wrap: nowrap;
   max-width: 1265px;
   margin: 0 auto;
+  min-height: calc(100vh - 6.25rem);
 }
 
 main.main-container {
