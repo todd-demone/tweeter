@@ -110,7 +110,7 @@ $(() => {
 
   // When the "write a new tweet" button is clicked, this event method shows/hides the "what are you humming about?" box.
   $('.navbar button.toggle-tweet-button').on('click', () => {
-    $('.new-tweet').slideToggle();
+    $('.new-tweet').slideToggle('slow');
     $('#tweet-text').focus();
   });
 
@@ -157,9 +157,6 @@ $(() => {
     );
     return false;
   });
-
-  
-
 
   //////////////////////
   // DRIVER CODE      //
