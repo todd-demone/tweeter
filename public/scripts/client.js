@@ -107,7 +107,7 @@ $(() => {
 
 
   // When the "write a new tweet" button is clicked, this event method shows/hides the "what are you humming about?" box.
-  $('.navbar button.toggle-tweet-button').on('click', () => {
+  $('.navbar .toggle-tweet').on('click', () => {
     $('.new-tweet').slideToggle('slow');
     $('#tweet-text').focus();
   });
@@ -119,11 +119,11 @@ $(() => {
   });
 
 
-  // When the user scrolls a sufficient distance, this event method shows the scroll-to-top button and hides the "write a new tweet" button.
+  // When the user scrolls a sufficient distance, this event method shows the scroll-top button and hides the "write a new tweet" button.
   $(window).on('scroll', e => {
     const scrollPosition = $(e.currentTarget).scrollTop();
-    $scrollToTopButton = $('.navbar button.scroll-to-top');
-    $toggleTweetButton = $scrollToTopButton.siblings('button.toggle-tweet-button');
+    $scrollToTopButton = $('.navbar .scroll-top');
+    $toggleTweetButton = $scrollToTopButton.siblings('.toggle-tweet');
     if (scrollPosition > 150) {
       $scrollToTopButton.show('fast');
       $toggleTweetButton.hide('fast');
@@ -136,10 +136,10 @@ $(() => {
   });
 
   
-  // When the scroll-to-top button is clicked, this event method scrolls to the top of the screen, hides the scroll-to-top button and shows the "write a new tweet" button.
-  $('.navbar button.scroll-to-top').on('click', e => {
+  // When the scroll-top button is clicked, this event method scrolls to the top of the screen, hides the scroll-top button and shows the "write a new tweet" button.
+  $('.navbar .scroll-top').on('click', e => {
     $scrollToTopButton = $(e.currentTarget);
-    $toggleTweetButton = $scrollToTopButton.siblings('button.toggle-tweet-button');
+    $toggleTweetButton = $scrollToTopButton.siblings('.toggle-tweet');
     $('html, body').animate(
       {
         scrollTop: 0,
