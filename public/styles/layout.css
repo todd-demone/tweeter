@@ -29,8 +29,7 @@ body {
 .hm-container {
   max-width: 1265px;
   margin: 0 auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 6.25rem);
@@ -38,15 +37,13 @@ body {
 
 .main {
   margin-bottom: 2rem;
-  position: relative;
 }
 
 /* MEDIA QUERIES */
 
 @media (min-width: 600px) {
   .hm-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 0 2rem;
   }
 }
 
