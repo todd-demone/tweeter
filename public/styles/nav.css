@@ -1,7 +1,4 @@
 .navbar {
-  height: 6.25rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,19 +8,18 @@
 }
 
 .navbar .container {
+  height: 6.25rem;
   max-width: 1265px;
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #FFFFFF;
 }
 
 .navbar .logo {
-  display: flex; /* necessary so that the logo is vertically aligned with the `.toggle-tweet` element on the right hand side */
-  flex-direction: column;
-  justify-content: center;
   font-family: 'Bungee', cursive;
   font-size: 1.5rem;
 }
@@ -45,10 +41,6 @@
 }
 
 .navbar .toggle-tweet {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-size: 1rem;
 }
 
@@ -113,13 +105,12 @@
 
 @media (min-width: 1024px) {
 
-  .navbar {
-    height: 7.5rem;    
+  .navbar .container {
+    height: 7.5rem;
   }
 
   .navbar .logo.logo-center {
     width: auto;
-    height: 55.2px;
     text-align: left;  
   }
 
