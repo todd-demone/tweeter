@@ -1,25 +1,27 @@
-.navbar-container {
-  background-color: #4056A1;
+.navbar {
+  height: 6.25rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 99;
+  background-color: #4056A1;
 }
 
-.navbar {
-  height: 6.25rem;
-  width: 100%;
+.navbar .container {
   max-width: 1265px;
   margin: 0 auto;
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   display: flex;
   justify-content: space-around;
   color: #FFFFFF;
 }
 
 .navbar .logo {
-  display: flex; /* necessary so that the logo is vertically aligned with the `button.toggle-tweet-button` element on the right hand side */
+  display: flex; /* necessary so that the logo is vertically aligned with the `.toggle-tweet` element on the right hand side */
   flex-direction: column;
   justify-content: center;
   font-family: 'Bungee', cursive;
@@ -42,7 +44,7 @@
 	outline: inherit;
 }
 
-.navbar button.toggle-tweet-button {
+.navbar .toggle-tweet {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,7 +72,7 @@
   }
 }
 
-.navbar button.scroll-to-top {
+.navbar .scroll-top {
   display: none;
   position: fixed;
   bottom: 1rem;
@@ -86,7 +88,7 @@
 
 @media (min-width: 375px) {
 
-  .navbar button.toggle-tweet-button {
+  .navbar .toggle-tweet {
     font-size: 1.25rem;
   }
   
@@ -94,7 +96,7 @@
 
 @media (min-width: 600px) {
 
-  .navbar {
+  .navbar .container {
     justify-content: space-between;   
   }
 
@@ -102,7 +104,7 @@
     font-size: 2rem;
   }
 
-  .navbar button.toggle-tweet-button {
+  .navbar .toggle-tweet {
     font-size: 1.5rem;
   }
 

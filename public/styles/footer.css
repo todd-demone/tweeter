@@ -1,8 +1,8 @@
-.footer-container {
+.footer {
   background-color: #4056A1;
 }
 
-.footer {
+.footer .container {
   height: 6.25rem;
   width: 100%;
   max-width: 1265px;

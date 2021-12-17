@@ -27,16 +27,17 @@ body {
  */
 
 .hm-container {
+  max-width: 1265px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  max-width: 1265px;
-  margin: 0 auto;
   min-height: calc(100vh - 6.25rem);
 }
 
-main.main-container {
-  padding: 0 2rem;
+.main {
   margin-bottom: 2rem;
   position: relative;
 }
@@ -44,15 +45,19 @@ main.main-container {
 /* MEDIA QUERIES */
 
 @media(min-width: 1024px) {
-
+  
   .hm-container {
     flex-direction: row;
     flex-wrap: wrap;
   }
   
-  main.main-container {
+  .main {
     width: 60%;
     margin-top: 12.5rem;
+  } 
+  
+  .main .container {
+    padding-left: 2rem;
   }
   
 }
