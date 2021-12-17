@@ -143,15 +143,16 @@ $(() => {
     const scrollPosition = $(e.currentTarget).scrollTop();
     const $scrollTop = $('.scroll-top');
     const $toggleTweet = $scrollTop.siblings('.toggle-tweet');
+    const $logo = $('.navbar .logo');
 
     if (scrollPosition > 150) {
       $scrollTop.show('slow');
       $toggleTweet.hide('slow');
-      $('.navbar .logo').addClass('logo-center');
+      $logo.addClass('logo-center');
     } else {
       $scrollTop.hide('slow');
       $toggleTweet.show('slow');
-      $('.navbar .logo').removeClass('logo-center');
+      $logo.removeClass('logo-center');
     }
   });
 
