@@ -2,13 +2,8 @@ const MAX_LENGTH = 140;
 
 $(() => {
   
-  /**
-   * When the textarea contents are changed by the user, the method
-   * updates the tweet form's character counter with the # of allowable
-   * characters remaining.
-   * When the new textarea contains > 140 characters, the method changes
-   * the character counter's colour to red and show the error message.
-   */
+  // event: textarea contents are changed by user
+  // handler: update counter; if below 0, change to red and show error message;
   $('#tweet-text').on('input', e => {
     const $tweetText = $(e.currentTarget);
     const $counter = $tweetText.parent().find(".counter");
