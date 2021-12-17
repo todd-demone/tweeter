@@ -13,10 +13,10 @@
 .navbar .container {
   max-width: 1265px;
   margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   color: #FFFFFF;
 }
 
@@ -97,7 +97,8 @@
 @media (min-width: 600px) {
 
   .navbar .container {
-    justify-content: space-between;   
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .navbar .logo {
@@ -118,6 +119,7 @@
 
   .navbar .logo.logo-center {
     width: auto;
+    height: 55.2px;
     text-align: left;  
   }
 
