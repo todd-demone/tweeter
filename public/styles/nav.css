@@ -11,8 +11,7 @@
   height: 6.25rem;
   max-width: 1265px;
   margin: 0 auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -89,8 +88,7 @@
 @media (min-width: 600px) {
 
   .navbar .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 0 2rem;
   }
 
   .navbar .logo {
