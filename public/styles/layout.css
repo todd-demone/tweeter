@@ -33,7 +33,6 @@ body {
   padding-right: 1rem;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
   min-height: calc(100vh - 6.25rem);
 }
 
@@ -55,7 +54,6 @@ body {
   
   .hm-container {
     flex-direction: row;
-    flex-wrap: wrap;
   }
   
   .main {
