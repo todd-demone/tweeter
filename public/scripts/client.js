@@ -5,11 +5,7 @@ $(() => {
   //////////////////////////
 
 
-  /**
-   * Creates an html representation of a tweet.
-   * @param {Object} tweet A single tweet object. 
-   * @returns {String} HTML representing the tweet.
-   */
+  // receives a tweet object and returns an html representation of the tweet.
   const createTweetElement = tweet => {
     return `
       <article class="tweet">
@@ -36,11 +32,7 @@ $(() => {
   };
 
 
-  /**
-   * Appends all tweets to the html page.
-   * @param {Array} tweets 
-   * @returns {undefined}
-   */
+  // receives an array of tweets and appends them to the html page.
   const renderTweets = tweets => {
     const $tweetsContainer = $('#tweets-container');
 
@@ -53,10 +45,7 @@ $(() => {
   };
 
 
-  /**
-   * GET request for tweets array.
-   * If there are no errors, calls renderTweets(tweets).
-   */
+  // makes GET request for tweets; if no errors, sends tweets to `renderTweets`
   const loadTweets = () => {
     $.get('/tweets')
      .then( tweets => {
@@ -65,11 +54,7 @@ $(() => {
   };
 
 
-  /**
-   * Escapes user input to prevent XSS.
-   * @param {String} str User input. 
-   * @returns {String} Escaped user input.  
-   */
+  // receives string and returns escaped string (prevents XSS)
   const escapeText = str => {
     let div = document.createElement('div');
 
@@ -79,11 +64,7 @@ $(() => {
   };
 
 
-  /**
-   * Displays an error message above the `.new-tweet` element.
-   * @param {String} message An error message 
-   * @returns false;
-   */
+  // receives an error message (string) and renders it to the screen; returns false
   const sendErrorMessage = message => {
     const $errorBox = $('.new-tweet .error');
     const $errorMessage = $errorBox.children('.msg');
@@ -100,11 +81,8 @@ $(() => {
   //////////////////////
 
 
-  /**
-   * When the tweet form's submit button is clicked, the method 
-   * validates the text in the form and, 
-   * if there are no errors, POSTs serialized tweet data to the server.
-   */
+  // event: submit form data
+  // handler: validates text in form, POSTs data to server, loads tweets
   $('#tweet-form').on('submit', e => {
     const $tweetForm = $(e.currentTarget);
     const tweetString = $tweetForm.children('#tweet-text').val();
@@ -124,21 +102,16 @@ $(() => {
   });
 
 
-  /**
-   * When the toggle-tweet button is clicked, the method
-   * shows/hides the new-tweet form.
-   */
+  // event: click `toggle-tweet` button
+  // handler: shows/hides the `new-tweet` element 
   $('.toggle-tweet').on('click', () => {
     $('.new-tweet').slideToggle('slow');
     $('#tweet-text').focus();
   });
 
 
-  /**
-   * When the user scrolls past a certain point on the screen, the method 
-   * shows the scroll-top button and hides the toggle-tweet button.
-   * If the scroll position is near the top, the opposite happens.
-   */
+  // event: scroll
+  // handler: show/hide the buttons as specified, center the logo text
   $(window).on('scroll', e => {
     const scrollPosition = $(e.currentTarget).scrollTop();
     const $scrollTop = $('.scroll-top');
@@ -157,12 +130,8 @@ $(() => {
   });
 
   
-  /**
-   * When the scroll-top button is clicked, the method
-   * 1. scrolls to the top of the screen, then
-   * 2. when #1 is done, the toggle-tweet button appears and the scroll-top button disappears
-   * 3. when #2 is done, the new-tweet element is shown and its textarea is given focus.
-   */
+  // event: click `scroll-top` button
+  // handler: scroll to top of screen, show `toggle-tweet` button, show `new-tweet` element
   $('.scroll-top').on('click', e => {
     const $scrollTop = $(e.currentTarget);
     const $toggleTweet = $scrollTop.siblings('.toggle-tweet');
