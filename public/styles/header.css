@@ -1,9 +1,11 @@
-.banner-container {
+.header {
   margin-top: 6.25rem;
 }
 
-.banner {
+.header .container {
   height: 335px;
+  margin-left: -2rem;
+  margin-right: -2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -13,17 +15,17 @@
   color: #ffffff;
 }
 
-.banner img {
+.header img {
   height: 150px;
 }
 
-.banner h2 {
+.header h2 {
   font-size: 1.5rem;
   text-align: center;
   margin: 0;
 }
 
-.banner h2 .light-heading {
+.header h2 .light-heading {
   font-weight: 300;
 }
 
@@ -31,35 +33,36 @@
 
 @media(min-width: 600px) {
   
-  .banner {
+  .header .container {
     height: 520px;
   }
   
-  .banner img {
+  .header img {
     height: 256px;
   }
 
-  .banner h2 {
+  .header h2 {
     font-size: 2.25rem;
   }
 }
 
 @media (min-width: 1024px) {
   
-  .banner-container {
+  .header {
     width: 40%;
     margin-top: 0;
-    padding: 0 0 0 2rem;
   }
 
-  .banner {
+  .header .container {
+    margin-left: 0;
+    margin-right: 0;
     position: sticky;
     top: 12.5rem;
     max-width: 360px;
     max-height: 360px;
   }
 
-  .banner img {
+  .header img {
     height: 200px;
   }
 }
