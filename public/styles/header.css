@@ -30,7 +30,7 @@
 
 /* MEDIA QUERIES */
 
-@media(min-width: 600px) {
+@media(min-width: 37.5rem) {
   
   .header img {
     height: 200px;

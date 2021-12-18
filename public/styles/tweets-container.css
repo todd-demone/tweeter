@@ -83,7 +83,7 @@
 
 }
 
-@media (min-width: 600px) {
+@media (min-width: 37.5rem) {
 
   .tweet header {
     padding: 0 1.5rem 0 0.5rem;
@@ -108,7 +108,7 @@
 
 }
 
-@media (min-width: 800px) {
+@media (min-width: 50rem) {
   
   .tweet:first-child {
     margin-top: 0;
