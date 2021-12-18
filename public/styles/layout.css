@@ -27,7 +27,7 @@ body {
  */
 
 .hm-container {
-  max-width: 1265px;
+  max-width: 75rem;
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
@@ -39,6 +39,12 @@ body {
   margin-bottom: 2rem;
 }
 
+.main .container {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 600px) {
@@ -47,19 +53,20 @@ body {
   }
 }
 
-@media(min-width: 1024px) {
+@media(min-width: 800px) {
   
   .hm-container {
     flex-direction: row;
   }
   
   .main {
-    width: 60%;
+    width: 66%;
     margin-top: 12.5rem;
   } 
   
   .main .container {
     padding-left: 2rem;
+    margin-right: 0;
   }
   
 }

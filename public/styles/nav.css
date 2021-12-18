@@ -9,7 +9,7 @@
 
 .navbar .container {
   height: 6.25rem;
-  max-width: 1265px;
+  max-width: 75rem;
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
@@ -101,7 +101,7 @@
 
 } 
 
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
 
   .navbar .container {
     height: 7.5rem;

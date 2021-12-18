@@ -75,6 +75,14 @@
 
 /* MEDIA QUERIES */
 
+@media (min-width: 520px) {
+
+  .tweet main {
+    font-size: 1.25rem;
+  }
+
+}
+
 @media (min-width: 600px) {
 
   .tweet header {
@@ -100,7 +108,7 @@
 
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
   
   .tweet:first-child {
     margin-top: 0;
