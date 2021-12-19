@@ -2,6 +2,8 @@
  * Tweets and Tweets Container
  */
 
+@use '../utilities/variables' as *;
+
 .tweet {
   margin: 2rem 0 0;
   padding: 0 1rem 1rem;

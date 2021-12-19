@@ -2,6 +2,8 @@
  * New Tweet
  */
 
+@use '../utilities/variables' as *;
+
 .new-tweet {
   padding: 0 1rem;
   display: none;

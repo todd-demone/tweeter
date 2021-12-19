@@ -2,6 +2,8 @@
  * Header
  */
 
+@use '../utilities/variables' as *;
+
 .header {
   margin-top: $nav-height-sm;
 
