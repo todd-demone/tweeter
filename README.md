@@ -7,8 +7,6 @@ This app was created while completing the [Lighthouse Labs](https://github.com/l
 
 ## Final Product
 
-### Toggling the tweet form
-
 !["Toggling the tweet form"](https://github.com/todd-demone/tweeter/blob/master/docs/toggle-tweet.gif?raw=true)
 
 ### Responsive breakpoints
