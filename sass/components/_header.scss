@@ -1,0 +1,73 @@
+/*
+ * Header
+ */
+
+.header {
+  margin-top: $nav-height-sm;
+
+  .container {
+    height: 335px;
+    margin: 0 -2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $color-primary;
+    background-image: url('/images/asfalt-light.png');
+    color: $white;
+  }
+
+  img {
+    height: 150px;
+  }
+
+  h2 {
+    font-size: $font-size;
+    text-align: center;
+    margin: 0;
+    
+    .light-heading {
+      font-weight: $light;
+    }
+
+  }
+
+}
+/* Header Media Queries */
+
+@media(min-width: $md-breakpoint) {
+  
+  .header {
+    
+    .container {
+      height: 400px;
+    }
+
+    img {
+      height: 200px;
+    } 
+  
+    h2 {
+      font-size: 2.25rem;
+    }
+
+  } 
+}
+
+@media (min-width: $xl-breakpoint) {
+  
+  .header {
+    width: 34%;
+    margin-top: 0;
+
+    .container {
+      margin: 0;
+      position: sticky;
+      top: 12.5rem;
+      max-width: 360px;
+      max-height: 360px;
+    }
+
+  }
+
+}

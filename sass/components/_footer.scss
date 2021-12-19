@@ -1,0 +1,22 @@
+/*
+ * Footer
+ */
+ 
+.footer {
+  background-color: $color-secondary;
+  
+  .container {
+    height: $nav-height-sm;
+    width: 100%;
+    max-width: $site-max-width;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+}

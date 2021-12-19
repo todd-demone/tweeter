@@ -1,0 +1,94 @@
+/*
+ * New Tweet
+ */
+
+.new-tweet {
+  padding: 0 1rem;
+  display: none;
+  margin-top: 2rem;
+
+  .error {
+    display: none;
+    margin-bottom: 1rem;
+    padding: .75rem;
+    font-size: 1rem;
+    text-align: center;
+    color: $color-warning;
+    background-color: $error-bg;
+    border: 3.5px solid $color-warning;
+  }
+  
+  form label {
+    font-weight: $bold;
+  }
+  
+  #tweet-text,
+  #tweet-text:focus {
+    height: 5rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0 0 .5rem;
+    background-color: $body-bg;
+    color: $font-color;
+    outline: none;
+    resize: none;
+    border-width: 0 0 3.5px;
+    font-size: 1rem;
+    font-weight: $bold;
+  }
+  
+  footer {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: $font-secondary;
+    
+    button {
+      padding: .25rem .5rem;
+      font-size: 1rem;
+      font-weight: $bold;
+      background-color: $color-secondary;
+      color: $white;
+      -webkit-appearance: none;
+      appearance: none;
+      border: 1px solid transparent;
+    }
+
+    button:focus,
+    button:active {
+      border-color: $white;
+      box-shadow: 0 0 0 0.2rem rgba(102,145,247,0.5);
+    }
+
+    .counter {
+      font-size: 1.25rem;
+    } 
+
+    .counter.negative {
+      color: $color-warning;
+    }
+
+  }
+  
+}
+
+
+/* New tweet media queries */
+
+@media (min-width: $md-breakpoint) {
+
+  .new-tweet .error {
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+  }
+
+}
+
+@media(min-width: $xl-breakpoint) {
+
+  .new-tweet {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+  
+}

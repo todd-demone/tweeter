@@ -1,0 +1,128 @@
+/*
+ * Navigation
+ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: $color-secondary;
+  
+  .container {
+    height: $nav-height-sm;
+    max-width: $site-max-width;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $white;
+  }
+
+  .logo {
+    font-family: $font-secondary;
+    font-size: $font-size;
+  }
+
+  .logo-center {
+    width: 100%;
+    text-align: center;  
+  }
+
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  .toggle-tweet {
+    font-size: 1rem;
+  }
+
+  .fa-angles-down {
+    color: $color-warning;
+  }
+
+  .arrow {
+    animation: bounce 2s infinite;
+  }
+  
+  .scroll-top {
+    display: none;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    height: 60px;
+    width: 60px;
+    background-color: $color-warning;
+    color: $white;
+    border-radius: 50%; 
+  }
+
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* Navigation Media Queries */
+
+@media (min-width: $xs-breakpoint) {
+
+  .navbar .toggle-tweet {
+    font-size: 1.25rem;
+  }
+  
+}
+
+@media (min-width: $md-breakpoint) {
+
+  .navbar {
+
+    .container {
+      padding: 0 2rem;
+    }
+  
+    .logo {
+      font-size: 2rem;
+    }
+  
+    .toggle-tweet {
+      font-size: $font-size;
+    }
+
+  }
+
+} 
+
+@media (min-width: $xl-breakpoint) {
+
+  .navbar {
+    
+    .container {
+      height: $nav-height-lg;
+    }
+  
+    .logo.logo-center {
+      width: auto;
+      text-align: left;  
+    }
+
+  } 
+
+}

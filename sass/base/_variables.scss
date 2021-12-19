@@ -1,0 +1,45 @@
+// Variables
+
+// Containers
+
+$content-max-width: 720px;
+$site-max-width: 1265px;
+
+// Breakpoints
+
+$xs-breakpoint: 375px;
+$sm-breakpoint: 520px;
+$md-breakpoint: 600px;
+$lg-breakpoint: 800px;
+$xl-breakpoint: 900px;
+
+// Colors
+
+$beige: #f4f1ec;
+$blue: #4056A1;
+$orange: #deac56;
+$purple: #c9cbde;
+$red: #ff1402;
+$white: #ffffff;
+
+$body-bg: $beige;
+$color-primary: $orange;
+$color-secondary: $blue;
+$color-tertiary: $purple;
+$color-warning: $red;
+
+$error: #721c24;
+$error-bg: #f8d7da;
+$error-border-color: #f5c6cb;
+
+// Body
+$font-size: 1.5rem;
+$font-color: #545149;
+$font-primary: 'Source Sans Pro', sans-serif;
+$font-secondary: 'Bungee', cursive;
+$light: 300;
+$bold: 600;
+
+// Navbar/footer heights
+$nav-height-sm: 6.25rem;
+$nav-height-lg: 7.5rem;
