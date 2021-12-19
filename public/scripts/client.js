@@ -48,9 +48,9 @@ $(() => {
   // makes GET request for tweets; if no errors, sends tweets to `renderTweets`
   const loadTweets = () => {
     $.get('/tweets')
-     .then( tweets => {
-       renderTweets(tweets);
-     });
+      .then(tweets => {
+        renderTweets(tweets);
+      });
   };
 
 
@@ -75,35 +75,44 @@ $(() => {
     return false;
   };
 
+  // Event handler for form data submit events (see below).
+  // Validates text in form, POSTs data to server, loads tweets.
+  const postForm = e => {
+    const $tweetForm = $(e.currentTarget);
+    const tweetString = $tweetForm.children('#tweet-text').val();
+    const data = $tweetForm.serialize();
+    
+    e.preventDefault();
+
+    if (!tweetString) return sendErrorMessage("You can't send an empty tweet.");
+    if (tweetString.length > 140) return sendErrorMessage("Tweets can't exceed 140 characters.");
+
+    $.post('/tweets', data)
+      .then(() => {
+        loadTweets();
+        $tweetForm.trigger('reset');
+        $tweetForm.find(".counter").text('140');
+      });
+  };
 
   //////////////////////
   // EVENT METHODS    //
   //////////////////////
 
 
-  // event: submit form data
-  // handler: validates text in form, POSTs data to server, loads tweets
-  $('#tweet-form').on('submit', e => {
-    const $tweetForm = $(e.currentTarget);
-    const tweetString = $tweetForm.children('#tweet-text').val();
-    const data = $tweetForm.serialize();
-    
-    e.preventDefault();
-    
-    if (!tweetString) return sendErrorMessage("You can't send an empty tweet.");
-    if (tweetString.length > 140) return sendErrorMessage("Tweets can't exceed 140 characters.");
+  // event: submit form data via 'Tweet' button
+  // handler: see postForm() above
+  $('#tweet-form').on('submit', postForm);
 
-    $.post('/tweets', data)
-     .then( () => {
-       loadTweets();
-       $tweetForm.trigger('reset');
-       $tweetForm.find(".counter").text('140');
-     });
+  // event: submit form data via Enter key
+  // handler: see postForm() above
+  $('#tweet-form').on('keydown', e => {
+    if (e.keyCode === 13) postForm(e);
   });
 
 
   // event: click `toggle-tweet` button
-  // handler: shows/hides the `new-tweet` element 
+  // handler: shows/hides the `new-tweet` element
   $('.toggle-tweet').on('click', () => {
     $('.new-tweet').slideToggle('slow');
     $('#tweet-text').focus();
@@ -137,12 +146,12 @@ $(() => {
     const $toggleTweet = $scrollTop.siblings('.toggle-tweet');
 
     $('html, body').animate({scrollTop: 0}).promise()
-     .then( () => {
-       $scrollTop.slideUp('slow');
-       $toggleTweet.slideDown('slow');
-       $('.new-tweet').slideDown('slow');
-       $('#tweet-text').focus();
-     });
+      .then(() => {
+        $scrollTop.slideUp('slow');
+        $toggleTweet.slideDown('slow');
+        $('.new-tweet').slideDown('slow');
+        $('#tweet-text').focus();
+      });
   });
     
 
