@@ -1,11 +1,3 @@
-/* 
- * Tweeter
- *
- * Tweeter is a simple, single-page Twitter clone.
- *
- * Author: Todd Demone
- * Source: https://github.com/todd-demone/tweeter
- */
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -72,8 +64,8 @@ body {
   }
 }
 /*
- * Navigation
- */
+* Navigation
+*/
 .navbar {
   position: fixed;
   top: 0;
@@ -413,3 +405,12 @@ body {
   font-size: 0.75rem;
   text-align: center;
 }
+
+/* 
+ * Tweeter
+ *
+ * Tweeter is a simple, single-page Twitter clone.
+ *
+ * Author: Todd Demone
+ * Source: https://github.com/todd-demone/tweeter
+ */
