@@ -12,12 +12,8 @@
   z-index: 99;
   background-color: $color-secondary;
   
-  .container {
+  .inner {
     height: $nav-height-sm;
-    max-width: $site-max-width;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     color: $white;
@@ -26,11 +22,6 @@
   .logo {
     font-family: $font-secondary;
     font-size: $font-size;
-  }
-
-  .logo-center {
-    width: 100%;
-    text-align: center;  
   }
 
   button {
@@ -95,10 +86,6 @@
 @media (min-width: $md-breakpoint) {
 
   .navbar {
-
-    .container {
-      padding: 0 2rem;
-    }
   
     .logo {
       font-size: 2rem;
@@ -116,13 +103,8 @@
 
   .navbar {
     
-    .container {
+    .inner {
       height: $nav-height-lg;
-    }
-  
-    .logo.logo-center {
-      width: auto;
-      text-align: left;  
     }
 
   } 

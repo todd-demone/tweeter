@@ -5,11 +5,12 @@
 @use '../utilities/variables' as *;
 
 .header {
+  width: 100%;
   margin-top: $nav-height-sm;
 
-  .container {
+  .inner {
     height: 335px;
-    margin: 0 -2rem;
+    margin: 0 -1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -35,14 +36,16 @@
   }
 
 }
+
 /* Header Media Queries */
 
 @media(min-width: $md-breakpoint) {
   
   .header {
     
-    .container {
+    .inner {
       height: 400px;
+      margin: 0 -2rem;
     }
 
     img {
@@ -54,6 +57,7 @@
     }
 
   } 
+  
 }
 
 @media (min-width: $xl-breakpoint) {
@@ -62,7 +66,7 @@
     width: 34%;
     margin-top: 0;
 
-    .container {
+    .inner {
       margin: 0;
       position: sticky;
       top: 12.5rem;

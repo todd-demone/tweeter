@@ -27,51 +27,27 @@ body {
  * Layout
  */
 
-.hm-container {
+.xl-container {
   max-width: $site-max-width;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1rem;
+}
+
+.flex-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.wrapper-for-header-and-main {
   min-height: calc(100vh - $nav-height-sm);
 }
-
-.main {
-  margin-bottom: 2rem;
-  
-  .container {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-}
-
 
 /* Layout Media Queries */
 
 @media (min-width: $md-breakpoint) {
-  .hm-container {
+  .xl-container {
     padding: 0 2rem;
   }
-}
-
-@media(min-width: $xl-breakpoint) {
-  
-  .hm-container {
-    flex-direction: row;
-  }
-  
-  .main {
-    width: 66%;
-    margin-top: 12.5rem;
-    
-    .container {
-      max-width: $content-max-width;
-      padding-left: 2rem;
-      margin-right: 0;
-    }
-    
-  } 
-  
-  
 }

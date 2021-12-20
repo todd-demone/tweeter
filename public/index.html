@@ -31,7 +31,7 @@
 
 <body>
   <nav class="navbar">
-    <div class="container">
+    <div class="inner xl-container flex-row">
       <div class="logo">
         <span>tweeter</span>
       </div>
@@ -48,34 +48,32 @@
       </div>
     </div>
   </nav>
-  <div class="hm-container">
+  <div class="wrapper-for-header-and-main xl-container flex-row">
     <header class="header">
-      <div class="container">
+      <div class="inner">
         <img src="/images/profile-hex.png" alt="User avatar">
         <h2>Rhoda <span class="light-heading">Jacobs</span></h2>
       </div>
     </header>
     <main class="main">
-      <div class="container">
-        <section class="new-tweet">
-          <div class="error">
-            <span class="msg"></span>
-          </div>
-          <form id="tweet-form">
-            <label for="tweet-text">What are you humming about?</label>
-            <textarea autofocus name="text" id="tweet-text"></textarea>
-            <footer>
-              <button type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
-            </footer>
-          </form>
-        </section>
-        <section id="tweets-container"></section>
-      </div>
+      <section class="new-tweet">
+        <div class="error">
+          <span class="msg"></span>
+        </div>
+        <form id="tweet-form">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea autofocus name="text" id="tweet-text"></textarea>
+          <footer class="flex-row">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </footer>
+        </form>
+      </section>
+      <section id="tweets-container"></section>
     </main>
   </div>
   <footer class="footer">
-    <div class="container">
+    <div class="inner xl-container flex-row">
       <span>Copyright © 2022 | Tweeter Inc. | Todd Demone Web Development</span>
     </div>
   </footer>

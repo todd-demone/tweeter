@@ -7,13 +7,8 @@
 .footer {
   background-color: $color-secondary;
   
-  .container {
+  .inner {
     height: $nav-height-sm;
-    width: 100%;
-    max-width: $site-max-width;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
     justify-content: center;
     align-items: center;
     color: $white;
@@ -21,12 +16,4 @@
     text-align: center;
   }
 
-}
-
-@media (min-width: $md-breakpoint) {
-  
-  .footer .container {
-    padding: 0 2rem;
-  }
-  
 }
