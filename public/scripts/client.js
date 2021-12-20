@@ -77,7 +77,7 @@ $(() => {
 
   // Event handler that is called when a form is submitted (see below).
   // Validates text in form, POSTs data to server, loads tweets.
-  const postForm = e => {
+  const postFormData = e => {
     const $tweetForm = $(e.currentTarget);
     const tweetString = $tweetForm.children('#tweet-text').val();
     const data = $tweetForm.serialize();
@@ -103,13 +103,13 @@ $(() => {
 
   // event: submit form data via 'Tweet' button
   // handler: see postForm() above
-  $('#tweet-form').on('submit', postForm);
+  $('#tweet-form').on('submit', postFormData);
 
 
   // event: submit form data via Enter key
   // handler: see postForm() above
   $('#tweet-form').on('keydown', e => {
-    if (e.keyCode === 13) postForm(e);
+    if (e.keyCode === 13) postFormData(e);
   });
 
 
