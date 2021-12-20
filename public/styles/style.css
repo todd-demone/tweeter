@@ -397,7 +397,7 @@ body {
   width: 100%;
   max-width: 1265px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -406,6 +406,11 @@ body {
   text-align: center;
 }
 
+@media (min-width: 600px) {
+  .footer .container {
+    padding: 0 2rem;
+  }
+}
 /* 
  * Tweeter
  *
