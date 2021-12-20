@@ -47,7 +47,7 @@ $(() => {
 
   // makes GET request for tweets; if no errors, sends tweets to `renderTweets`
   const loadTweets = () => {
-    $.get('/tweet')
+    $.get('/tweets')
       .then(tweets => renderTweets(tweets))
       .catch(err => console.log(`Error: ${err.status} ${err.statusText}`));
   };
@@ -73,6 +73,7 @@ $(() => {
     $('#tweet-text').focus();
     return false;
   };
+
 
   // Event handler that is called when a form is submitted (see below).
   // Validates text in form, POSTs data to server, loads tweets.
@@ -103,6 +104,7 @@ $(() => {
   // event: submit form data via 'Tweet' button
   // handler: see postForm() above
   $('#tweet-form').on('submit', postForm);
+
 
   // event: submit form data via Enter key
   // handler: see postForm() above
