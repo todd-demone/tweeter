@@ -47,10 +47,9 @@ $(() => {
 
   // makes GET request for tweets; if no errors, sends tweets to `renderTweets`
   const loadTweets = () => {
-    $.get('/tweets')
-      .then(tweets => {
-        renderTweets(tweets);
-      });
+    $.get('/tweet')
+      .then(tweets => renderTweets(tweets))
+      .catch(err => console.log(`Error: ${err.status} ${err.statusText}`));
   };
 
 
@@ -75,7 +74,7 @@ $(() => {
     return false;
   };
 
-  // Event handler for form data submit events (see below).
+  // Event handler that is called when a form is submitted (see below).
   // Validates text in form, POSTs data to server, loads tweets.
   const postForm = e => {
     const $tweetForm = $(e.currentTarget);
@@ -88,11 +87,12 @@ $(() => {
     if (tweetString.length > 140) return sendErrorMessage("Tweets can't exceed 140 characters.");
 
     $.post('/tweets', data)
+      .then(() => loadTweets())
       .then(() => {
-        loadTweets();
         $tweetForm.trigger('reset');
         $tweetForm.find(".counter").text('140');
-      });
+      })
+      .catch(err => console.log(`Error: ${err.status} ${err.statusText}`));
   };
 
   //////////////////////
