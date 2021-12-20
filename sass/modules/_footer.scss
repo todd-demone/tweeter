@@ -12,7 +12,7 @@
     width: 100%;
     max-width: $site-max-width;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,4 +21,12 @@
     text-align: center;
   }
 
+}
+
+@media (min-width: $md-breakpoint) {
+  
+  .footer .container {
+    padding: 0 2rem;
+  }
+  
 }
