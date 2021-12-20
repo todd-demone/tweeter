@@ -49,7 +49,10 @@ $(() => {
   const loadTweets = () => {
     $.get('/tweets')
       .then(tweets => renderTweets(tweets))
-      .catch(err => console.log(`Error: ${err.status} ${err.statusText}`));
+      .catch(err => {
+        $('.new-tweet').slideDown();
+        sendErrorMessage(`Error: Tweets aren't available at this time (${err.status} ${err.statusText})`);
+      });
   };
 
 
@@ -93,7 +96,7 @@ $(() => {
         $tweetForm.trigger('reset');
         $tweetForm.find(".counter").text('140');
       })
-      .catch(err => console.log(`Error: ${err.status} ${err.statusText}`));
+      .catch(err => sendErrorMessage(`Error: Cannot post tweet (${err.status} ${err.statusText})`));
   };
 
   //////////////////////
