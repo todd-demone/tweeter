@@ -24,11 +24,6 @@
     font-size: $font-size;
   }
 
-  .logo-center {
-    width: 100%;
-    text-align: center;  
-  }
-
   button {
     background: none;
     color: inherit;
@@ -110,11 +105,6 @@
     
     .inner {
       height: $nav-height-lg;
-    }
-  
-    .logo.logo-center {
-      width: auto;
-      text-align: left;  
     }
 
   } 
