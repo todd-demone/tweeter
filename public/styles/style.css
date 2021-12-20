@@ -69,10 +69,6 @@ body {
   font-family: "Bungee", cursive;
   font-size: 1.5rem;
 }
-.navbar .logo-center {
-  width: 100%;
-  text-align: center;
-}
 .navbar button {
   background: none;
   color: inherit;
@@ -131,10 +127,6 @@ body {
 @media (min-width: 900px) {
   .navbar .inner {
     height: 7.5rem;
-  }
-  .navbar .logo.logo-center {
-    width: auto;
-    text-align: left;
   }
 }
 /*
