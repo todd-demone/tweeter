@@ -3,17 +3,19 @@
 Tweeter is a simple, single-page Twitter clone.
 
 ## Purpose
-This app was created while completing the [Lighthouse Labs](https://github.com/lighthouse-labs) [Web Development Flex Program](https://www.lighthouselabs.ca/en/web-development-flex-program). The project was intended to develop students' HTML, CSS, JS, jQuery and AJAX front-end skills, and Node, Express back-end skills.
+I created Tweeter while completing the [Lighthouse Labs](https://github.com/lighthouse-labs) [Web Development Flex Program](https://www.lighthouselabs.ca/en/web-development-flex-program). The project helped develop my HTML, CSS, JS, jQuery and AJAX front-end skills, and Node and Express back-end skills.
 
 ## Screenshots
 
+#### Basic functionality
+
 !["Toggling the tweet form"](https://github.com/todd-demone/tweeter/blob/master/docs/toggle-tweet.gif?raw=true)
 
-### Responsive breakpoints
+#### Responsive breakpoints
 
 !["Responsive breakpoints"](https://github.com/todd-demone/tweeter/blob/master/docs/responsive-breakpoints.gif?raw=true)
 
-### Character counter and error message
+#### Character counter and error message
 
 !["Character counter and error message"](https://github.com/todd-demone/tweeter/blob/master/docs/error-long-tweet.gif?raw=true)
 
