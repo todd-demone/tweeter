@@ -134,12 +134,10 @@ $(() => {
 
     if (scrollPosition > 150) {
       $scrollTop.show('slow');
-      $toggleTweet.hide('slow');
-      $logo.addClass('logo-center');
+      $toggleTweet.slideUp();
     } else {
       $scrollTop.hide('slow');
       $toggleTweet.show('slow');
-      $logo.removeClass('logo-center');
     }
   });
 
