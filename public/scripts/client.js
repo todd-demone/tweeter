@@ -91,12 +91,12 @@ $(() => {
     if (tweetString.length > 140) return sendErrorMessage("Tweets can't exceed 140 characters.");
 
     $.post('/tweets', data)
-      .then(() => loadTweets())
       .then(() => {
+        loadTweets();
         $tweetForm.trigger('reset');
         $tweetForm.find(".counter").text('140');
       })
-      .catch(err => sendErrorMessage(`Error: Cannot post tweet (${err.status} ${err.statusText})`));
+      .catch(err => sendErrorMessage(`Error: Your tweet did not get sent (${err.status} ${err.statusText})`));
   };
 
   //////////////////////
