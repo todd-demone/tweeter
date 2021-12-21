@@ -125,12 +125,11 @@ $(() => {
 
 
   // event: scroll
-  // handler: show/hide the buttons as specified, center the logo text
+  // handler: show/hide the buttons as specified
   $(window).on('scroll', e => {
     const scrollPosition = $(e.currentTarget).scrollTop();
     const $scrollTop = $('.scroll-top');
     const $toggleTweet = $scrollTop.siblings('.toggle-tweet');
-    const $logo = $('.navbar .logo');
 
     if (scrollPosition > 150) {
       $scrollTop.show('slow');
