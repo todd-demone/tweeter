@@ -14,12 +14,12 @@ const toggleTweetButton = () => {
 // handler: scroll to top of screen, show `toggle-tweet` button, show `new-tweet` element
 const scrollToTop = () => {
   $('.scroll-top').on('click', e => {
-    const $scrollTop = $(e.currentTarget);
-    const $toggleTweet = $scrollTop.siblings('.toggle-tweet');
+    const $scrollToTopButton = $(e.currentTarget);
+    const $toggleTweet = $scrollToTopButton.siblings('.toggle-tweet');
 
     $('html, body').animate({scrollTop: 0}).promise()
       .then(() => {
-        $scrollTop.slideUp('slow');
+        $scrollToTopButton.slideUp('slow');
         $toggleTweet.slideDown('slow');
         $('.new-tweet').slideDown('slow');
         $('#tweet-text').focus();
@@ -33,15 +33,15 @@ const scrollToTop = () => {
 const showHideButtonsOnScroll = () => {
     $(window).on('scroll', e => {
       const scrollPosition = $(e.currentTarget).scrollTop();
-      const $scrollTop = $('.scroll-top');
-      const $toggleTweet = $scrollTop.siblings('.toggle-tweet');
+      const $scrollToTopButton = $('.scroll-top');
+      const $toggleTweet = $scrollToTopButton.siblings('.toggle-tweet');
   
       if (scrollPosition > 150) {
-        $scrollTop.show('slow');
+        $scrollToTopButton.slideDown('slow');
         $toggleTweet.slideUp();
       } else {
-        $scrollTop.hide('slow');
-        $toggleTweet.show('slow');
+        $scrollToTopButton.slideUp('slow');
+        $toggleTweet.slideDown('slow');
       }
     });
 };
