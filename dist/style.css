@@ -1,0 +1,739 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Globals
+ */
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/*
+ * Layout
+ */
+.xl-container {
+  max-width: 1265px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.wrapper-for-header-and-main {
+  min-height: calc(100vh - 6.25rem);
+}
+
+/* Layout Media Queries */
+@media (min-width: 600px) {
+  .xl-container {
+    padding: 0 2rem;
+  }
+}
+/*
+* Navigation
+*/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: #4056A1;
+}
+.navbar .inner {
+  height: 6.25rem;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+.navbar .logo {
+  font-family: "Bungee", cursive;
+  font-size: 1.5rem;
+}
+.navbar button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.navbar .toggle-tweet {
+  font-size: 1rem;
+}
+.navbar .fa-angles-down {
+  color: #ff1402;
+}
+.navbar .arrow {
+  animation: bounce 2s infinite;
+}
+.navbar .scroll-top {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  height: 60px;
+  width: 60px;
+  background-color: #ff1402;
+  color: #ffffff;
+  border-radius: 50%;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+/* Navigation Media Queries */
+@media (min-width: 375px) {
+  .navbar .toggle-tweet {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 600px) {
+  .navbar .logo {
+    font-size: 2rem;
+  }
+  .navbar .toggle-tweet {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 900px) {
+  .navbar .inner {
+    height: 7.5rem;
+  }
+}
+/*
+ * Header
+ */
+.header {
+  width: 100%;
+  margin-top: 6.25rem;
+}
+.header .inner {
+  height: 335px;
+  margin: 0 -1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #deac56;
+  background-image: url("/images/asfalt-light.png");
+  color: #ffffff;
+}
+.header img {
+  height: 150px;
+}
+.header h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+}
+.header h2 .light-heading {
+  font-weight: 300;
+}
+
+/* Header Media Queries */
+@media (min-width: 600px) {
+  .header .inner {
+    height: 400px;
+    margin: 0 -2rem;
+  }
+  .header img {
+    height: 200px;
+  }
+  .header h2 {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 900px) {
+  .header {
+    width: 34%;
+    margin-top: 0;
+  }
+  .header .inner {
+    margin: 0;
+    position: sticky;
+    top: 12.5rem;
+    max-width: 360px;
+    max-height: 360px;
+  }
+}
+/*
+* Main
+*/
+.main {
+  width: 100%;
+  margin: 0 auto 2rem;
+}
+
+/* Main Media Queries */
+@media (min-width: 900px) {
+  .main {
+    width: 66%;
+    max-width: 720px;
+    margin-top: 12.5rem;
+    padding-left: 2rem;
+    margin-right: 0;
+  }
+}
+/*
+ * New Tweet
+ */
+.new-tweet {
+  padding: 0 1rem;
+  display: none;
+  margin-top: 2rem;
+}
+.new-tweet .error {
+  display: none;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #ff1402;
+  background-color: #f8d7da;
+  border: 3.5px solid #ff1402;
+}
+.new-tweet form label {
+  font-weight: 600;
+}
+.new-tweet #tweet-text,
+.new-tweet #tweet-text:focus {
+  height: 5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0 0 0.5rem;
+  background-color: #f4f1ec;
+  color: #545149;
+  outline: none;
+  resize: none;
+  border-width: 0 0 3.5px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.new-tweet footer {
+  margin-top: 0.5rem;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+}
+.new-tweet footer button {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #4056A1;
+  color: #ffffff;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid transparent;
+}
+.new-tweet footer button:focus,
+.new-tweet footer button:active {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 0.2rem rgba(102, 145, 247, 0.5);
+}
+.new-tweet footer .counter {
+  font-size: 1.25rem;
+}
+.new-tweet footer .counter.negative {
+  color: #ff1402;
+}
+
+/* New tweet media queries */
+@media (min-width: 600px) {
+  .new-tweet .error {
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 900px) {
+  .new-tweet {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+/*
+ * Tweets and Tweets Container
+ */
+.tweet {
+  margin: 2rem 0 0;
+  padding: 0 1rem 1rem;
+  border-style: solid;
+  border-width: 3.5px;
+}
+.tweet header {
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+.tweet header .avatar-and-name {
+  display: flex;
+  align-items: center;
+}
+.tweet header img {
+  width: 36px;
+  height: 36px;
+}
+.tweet header .name {
+  padding-left: 1rem;
+}
+.tweet header .handle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #c9cbde;
+  font-weight: 600;
+}
+.tweet main {
+  margin-top: 1rem;
+  padding: 0 1rem 1rem;
+  border-style: solid;
+  border-width: 0 0 3.5px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.tweet footer {
+  margin-top: 0.75rem;
+  padding: 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+.tweet footer .date {
+  font-weight: 600;
+}
+.tweet footer i {
+  padding-left: 0.25rem;
+  color: #4056A1;
+}
+.tweet footer i:first-child {
+  padding-left: 0;
+}
+.tweet footer i:hover {
+  color: #deac56;
+}
+
+.tweet:hover {
+  box-shadow: 6px 6px #c9cbde;
+}
+
+/* Tweets and tweets-container media queries */
+@media (min-width: 520px) {
+  .tweet main {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 600px) {
+  .tweet header {
+    padding: 0 1.5rem 0 0.5rem;
+    font-size: 1.5rem;
+  }
+  .tweet header img {
+    width: 48px;
+    height: 48px;
+  }
+  .tweet main {
+    margin-top: 2rem;
+    padding: 0 1.5rem 1.5rem;
+    font-size: 1.5rem;
+  }
+  .tweet footer {
+    padding: 0 1.5rem 0;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 900px) {
+  .tweet:first-child {
+    margin-top: 0;
+  }
+}
+/*
+ * Footer
+ */
+.footer {
+  background-color: #4056A1;
+}
+.footer .inner {
+  height: 6.25rem;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* 
+ * Tweeter
+ *
+ * Tweeter is a simple, single-page Twitter clone.
+ *
+ * Author: Todd Demone
+ * Source: https://github.com/todd-demone/tweeter
+ */
