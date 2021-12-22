@@ -563,8 +563,8 @@ body {
 .new-tweet form label {
   font-weight: 600;
 }
-.new-tweet #tweet-text,
-.new-tweet #tweet-text:focus {
+.new-tweet #tweet-textarea,
+.new-tweet #tweet-textarea:focus {
   height: 5rem;
   width: 100%;
   margin-top: 0.5rem;
