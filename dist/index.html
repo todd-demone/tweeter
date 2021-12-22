@@ -33,7 +33,7 @@
       <div class="logo">
         <span>tweeter</span>
       </div>
-      <div>
+      <div id="nav-buttons">
         <button class="toggle-tweet">
           <span><strong>Write</strong> a new tweet</span>
           <div class="arrow bounce">
@@ -59,11 +59,11 @@
           <span class="msg"></span>
         </div>
         <form id="tweet-form">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea autofocus name="text" id="tweet-text"></textarea>
+          <label for="tweet-textarea">What are you humming about?</label>
+          <textarea autofocus name="text" id="tweet-textarea"></textarea>
           <footer class="flex-row">
             <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <output name="counter" class="counter" for="tweet-textarea">140</output>
           </footer>
         </form>
       </section>
