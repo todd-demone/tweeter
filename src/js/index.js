@@ -1,15 +1,12 @@
 //  index.js
 
 import loadTweets from './tweetsContainer.js';
-import { toggleTweetButton, scrollToTop, showHideButtonsOnScroll } from './navigation.js';
-import { postDataOnSubmit, postDataOnEnterKey, countCharacters } from './newTweetForm.js';
+import { navButtonsEvents, showHideButtonsOnScroll } from './navigation.js';
+import tweetFormEvents from './tweetForm.js';
 
-$(document).ready(function () {
+$(() => {
   loadTweets();
-  toggleTweetButton();
-  scrollToTop();
+  navButtonsEvents();
   showHideButtonsOnScroll();
-  postDataOnSubmit();
-  postDataOnEnterKey();
-  countCharacters();
+  tweetFormEvents();
 });
