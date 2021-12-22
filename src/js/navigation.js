@@ -1,19 +1,15 @@
 // navigation.js
 
-// event: click `toggle-tweet` button
-// handler: shows/hides the `new-tweet` element
-const toggleTweetButton = () => {
-  $('.toggle-tweet').on('click', () => {
+
+const navButtonsEvents = () => {
+  const $navButtons = $('#nav-buttons');
+
+  $navButtons.on('click', '.toggle-tweet', () => {
     $('.new-tweet').slideToggle('slow');
-    $('#tweet-text').focus();
+    $('#tweet-textarea').focus();
   });
-};
 
-
-// event: click `scroll-top` button
-// handler: scroll to top of screen, show `toggle-tweet` button, show `new-tweet` element
-const scrollToTop = () => {
-  $('.scroll-top').on('click', e => {
+  $navButtons.on('click', '.scroll-top', e => {
     const $scrollToTopButton = $(e.currentTarget);
     const $toggleTweet = $scrollToTopButton.siblings('.toggle-tweet');
 
@@ -22,14 +18,12 @@ const scrollToTop = () => {
         $scrollToTopButton.slideUp('slow');
         $toggleTweet.slideDown('slow');
         $('.new-tweet').slideDown('slow');
-        $('#tweet-text').focus();
+        $('#tweet-textarea').focus();
       });
   });
 };
 
 
-// event: scroll
-// handler: show/hide the buttons as specified
 const showHideButtonsOnScroll = () => {
     $(window).on('scroll', e => {
       const scrollPosition = $(e.currentTarget).scrollTop();
@@ -46,4 +40,4 @@ const showHideButtonsOnScroll = () => {
     });
 };
 
-export { toggleTweetButton, scrollToTop, showHideButtonsOnScroll };
+export { navButtonsEvents, showHideButtonsOnScroll };
