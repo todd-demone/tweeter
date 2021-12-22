@@ -3,7 +3,7 @@
 Tweeter is a simple, single-page Twitter clone.
 
 ## Purpose
-I created Tweeter while completing the [Lighthouse Labs](https://github.com/lighthouse-labs) [Web Development Flex Program](https://www.lighthouselabs.ca/en/web-development-flex-program). The project helped develop my HTML, CSS, SASS, JS, jQuery, AJAX and Webpack front-end skills, and Node and Express back-end skills.
+I created Tweeter while completing the [Lighthouse Labs](https://github.com/lighthouse-labs) [Web Development Flex Program](https://www.lighthouselabs.ca/en/web-development-flex-program). The project helped develop my HTML, CSS, JS, jQuery, AJAX, SASS and Webpack front-end skills, and Node and Express back-end skills.
 
 ## Screenshots
 
