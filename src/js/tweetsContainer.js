@@ -1,6 +1,6 @@
 // tweetsContainer.js
 
-import sendErrorMessage from './helpers.js';
+import { escapeText, sendErrorMessage } from './helpers.js';
 
 // makes GET request for tweets; if no errors, sends tweets to `renderTweets`
 const loadTweets = () => {
@@ -16,13 +16,10 @@ const loadTweets = () => {
 // receives an array of tweets and appends them to the html page.
 const renderTweets = tweets => {
   const $tweetsContainer = $('#tweets-container');
+  let dynamicElements = '';
 
-  $tweetsContainer.html("");
-  
-  tweets.forEach(tweet => {
-    const tweetEl = createTweetElement(tweet);
-    $tweetsContainer.append(tweetEl);
-  });
+  tweets.forEach(tweet => dynamicElements += createTweetElement(tweet));
+  $tweetsContainer.html("").append(dynamicElements);
 };
 
 
@@ -52,14 +49,5 @@ const createTweetElement = tweet => {
   `;
 };
 
-
-// receives string and returns escaped string (prevents XSS)
-const escapeText = str => {
-  let div = document.createElement('div');
-
-  div.appendChild(document.createTextNode(str));
-  
-  return div.innerHTML;
-};
 
 export default loadTweets;
