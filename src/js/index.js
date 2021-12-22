@@ -1,4 +1,4 @@
-//  main.js
+//  index.js
 
 import loadTweets from './tweetsContainer.js';
 import { toggleTweetButton, scrollToTop, showHideButtonsOnScroll } from './navigation.js';
