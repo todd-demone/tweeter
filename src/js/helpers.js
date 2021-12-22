@@ -2,8 +2,7 @@
 
 const MAX_LENGTH = 140;
 
-
-// receives string and returns escaped string (prevents XSS)
+// receives a string and returns an escaped string (prevents XSS)
 const escapeText = str => {
   let div = document.createElement('div');
 
@@ -13,6 +12,7 @@ const escapeText = str => {
 };
 
 
+// receives a string and returns boolean: true if string meets requirements for valid tweet, false otherwise
 const isValidTweet = tweetString => {
   if (!tweetString) {
     sendErrorMessage("You can't send an empty tweet.");
@@ -25,7 +25,7 @@ const isValidTweet = tweetString => {
 };
 
 
-// receives an error message (string) and renders it to the screen; returns false.
+// receives an error message (string) and renders it to the screen
 const sendErrorMessage = message => {
   const $errorBox = $('.new-tweet .error');
   

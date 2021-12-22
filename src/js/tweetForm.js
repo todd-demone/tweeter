@@ -7,12 +7,15 @@ import loadTweets from './tweetsContainer.js';
 const tweetFormEvents = () => {
   const $tweetForm = $('#tweet-form');
   
+  // send Tweet to server when user clicks 'Tweet' button
   $tweetForm.on('submit', postFormData);
   
+  // send tweet to server when user hits Enter key while in textarea
   $tweetForm.on('keydown', e => { 
     if (e.keyCode === 13) postFormData(e);
   });
   
+  // update character counter to show how many characters until hit MAX_LENGTH; turn counter red if exceed MAX_LENGTH
   $tweetForm.on('input', '#tweet-textarea', e => {
     const $tweetTextarea = $(e.currentTarget);
     const tweetString = $tweetTextarea.val();
@@ -31,7 +34,7 @@ const tweetFormEvents = () => {
   });
 }
 
-
+// callback function for tweet form submission events (above)
 const postFormData = e => {
   const $tweetForm = $(e.currentTarget);
   const data = $tweetForm.serialize();
