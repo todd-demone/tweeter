@@ -29,7 +29,7 @@ const tweetFormEvents = () => {
     }
   });
 
-  // update character counter to show how many characters until hit MAX_LENGTH; turn counter red if exceed MAX_LENGTH
+  // update character counter to show how many characters until the tweet reaches the MAX_LENGTH; turn counter red if the tweets exceeds the MAX_LENGTH
   $tweetForm.on("input", "#tweet-textarea", (e) => {
     const tweetString = $(e.currentTarget).val();
     const $counter = $tweetForm.find(".counter");
