@@ -1,5 +1,6 @@
 // helpers.js
 
+// maximum length of tweets
 const MAX_LENGTH = 140;
 
 // receives a string and returns an escaped string (prevents XSS)
