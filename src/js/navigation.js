@@ -9,7 +9,7 @@ const navButtonsEvents = () => {
     $('#tweet-textarea').focus();
   });
 
-  // scroll to the top of window, hide the scroll-top button and show the tweet-toggle button
+  // scroll to the top of window, hide the scroll-top button and show the tweet-toggle button when this button is clicked
   $navButtons.on('click', '.scroll-top', e => {
     const $scrollToTopButton = $(e.currentTarget);
     const $toggleTweet = $scrollToTopButton.siblings('.toggle-tweet');
