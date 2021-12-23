@@ -1,5 +1,6 @@
 // tweetsContainer.js
 
+import { format } from 'timeago.js';
 import { escapeText, sendErrorMessage } from './helpers.js';
 
 // makes GET request for tweets; if no errors, sends tweets to `renderTweets`
@@ -36,7 +37,7 @@ const createTweetElement = tweet => {
       </header>
       <main>${escapeText(tweet.content.text)}</main>
       <footer>
-        <span class="date">${timeago.format(tweet.created_at)}</span>
+        <span class="date">${format(tweet.created_at)}</span>
         <div>
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
