@@ -34,6 +34,10 @@ To use the app, go to <http://localhost:8080/> in your browser.
 
 - Express
 - Node 5.10.x or above
+- body-parser
+- chance
+- timeago
+- md5
 
 ## Author
 [Todd Demone](https://github.com/todd-demone)
