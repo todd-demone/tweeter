@@ -2,9 +2,6 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-## Purpose
-I created Tweeter while completing the [Lighthouse Labs](https://github.com/lighthouse-labs) [Web Development Flex Program](https://www.lighthouselabs.ca/en/web-development-flex-program). The project helped develop my HTML, CSS, JS, jQuery, AJAX, SASS and Webpack front-end skills, and Node and Express back-end skills.
-
 ## Screenshots
 
 #### Basic functionality
@@ -32,13 +29,24 @@ To use the app, go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
 
-- Express
 - Node 5.10.x or above
+- express
 - body-parser
 - chance
-- timeago
+- timeago.js
 - md5
 
-## Author
-[Todd Demone](https://github.com/todd-demone)
+## Purpose
 
+I created Tweeter while completing the [Lighthouse Labs](https://github.com/lighthouse-labs) [Web Development Flex Program](https://www.lighthouselabs.ca/en/web-development-flex-program). The project helped me develop proficiency in the following languages and tools: 
+- HTML
+- CSS including SASS
+- JavaScript including jQuery and AJAX
+- Webpack
+- Babel 
+- Node 
+- Express
+
+## Author
+
+[Todd Demone](https://github.com/todd-demone)
