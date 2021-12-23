@@ -41,11 +41,12 @@ To use the app, go to <http://localhost:8080/> in your browser.
 ## Dependencies
 
 - node 5.10.x or above
-- express
 - body-parser
 - chance
-- timeago.js
+- express
+- jquery
 - md5
+- timeago.js
 
 ## Author
 
