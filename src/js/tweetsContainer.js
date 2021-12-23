@@ -15,11 +15,9 @@ const loadTweets = () => {
 
 // receives an array of tweets and appends them to the html page.
 const renderTweets = tweets => {
-  const $tweetsContainer = $('#tweets-container');
   let dynamicElements = '';
-
   tweets.forEach(tweet => dynamicElements += createTweetElement(tweet));
-  $tweetsContainer.html("").append(dynamicElements);
+  $('#tweets-container').html("").append(dynamicElements);
 };
 
 
