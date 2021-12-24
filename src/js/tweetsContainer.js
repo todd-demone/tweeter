@@ -1,29 +1,29 @@
 // tweetsContainer.js
 
-// import { format } from 'timeago.js';
-// import { escapeText, sendErrorMessage } from './helpers.js';
+import { format } from 'timeago.js';
+import { escapeText, sendErrorMessage } from './helpers.js';
 
 // makes GET request for tweets; if no errors, sends tweets to `renderTweets`
 const loadTweets = () => {
-  $.get("/tweets")
-    .then((tweets) => renderTweets(tweets))
-    .catch((err) => {
-      $(".new-tweet").slideDown();
-      sendErrorMessage(
-        `Error: Tweets aren't available at this time (${err.status} ${err.statusText})`
-      );
+  $.get('/tweets')
+    .then(tweets => renderTweets(tweets))
+    .catch(err => {
+      $('.new-tweet').slideDown();
+      sendErrorMessage(`Error: Tweets aren't available at this time (${err.status} ${err.statusText})`);
     });
 };
 
+
 // receives an array of tweets and appends them to the html page.
-const renderTweets = (tweets) => {
-  let dynamicElements = "";
-  tweets.forEach((tweet) => (dynamicElements += createTweetElement(tweet)));
-  $("#tweets-container").html("").append(dynamicElements);
+const renderTweets = tweets => {
+  let dynamicElements = '';
+  tweets.forEach(tweet => dynamicElements += createTweetElement(tweet));
+  $('#tweets-container').html("").append(dynamicElements);
 };
 
+
 // receives a tweet object and returns an html representation of the tweet.
-const createTweetElement = (tweet) => {
+const createTweetElement = tweet => {
   return `
     <article class="tweet">
       <header>
@@ -48,4 +48,5 @@ const createTweetElement = (tweet) => {
   `;
 };
 
-// export default loadTweets;
+
+export default loadTweets;
