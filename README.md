@@ -49,6 +49,7 @@ To use the app, go to <http://localhost:8080/> in your browser.
 - [timeago.js](https://www.npmjs.com/package/timeago.js)
 - [babel](https://babeljs.io/)
 - [nodemon](https://www.npmjs.com/package/nodemon)
+- [sass](https://sass-lang.com/)
 - [webpack](https://webpack.js.org/)
 
 ## Author
