@@ -1,5 +1,5 @@
 const path = require("path");
-const webpack = require("webpack");
+const webpack = require("webpack"); // to access the builtin `ProvidePlugin`, which allows us to auto load the jQuery module without having to import it in every js file
 
 module.exports = {
   entry: "./src/js/index.js",
