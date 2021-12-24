@@ -47,6 +47,9 @@ To use the app, go to <http://localhost:8080/> in your browser.
 - jquery
 - md5
 - timeago.js
+- babel
+- nodemon
+- webpack
 
 ## Author
 
