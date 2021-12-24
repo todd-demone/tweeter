@@ -40,7 +40,7 @@ To use the app, go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
 
-- [node](https://nodejs.org) 5.10.x or above
+- [node](https://nodejs.org) (I used version 12.18.2)
 - [body-parser](https://www.npmjs.com/package/body-parser)
 - [chance](https://www.npmjs.com/package/chance)
 - [express](https://expressjs.com/)
