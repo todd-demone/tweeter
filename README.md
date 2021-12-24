@@ -40,16 +40,16 @@ To use the app, go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
 
-- node 5.10.x or above
-- body-parser
-- chance
-- express
-- jquery
-- md5
-- timeago.js
-- babel
-- nodemon
-- webpack
+- [node](https://nodejs.org) 5.10.x or above
+- [body-parser](https://www.npmjs.com/package/body-parser)
+- [chance](https://www.npmjs.com/package/chance)
+- [express](https://expressjs.com/)
+- [jquery](https://jquery.com/)
+- [md5](https://www.npmjs.com/package/md5)
+- [timeago.js](https://www.npmjs.com/package/timeago.js)
+- [babel](https://babeljs.io/)
+- [nodemon](https://www.npmjs.com/package/nodemon)
+- [webpack](https://webpack.js.org/)
 
 ## Author
 
