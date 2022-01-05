@@ -26,11 +26,11 @@ const isValidTweet = (tweetString) => {
 
 // receives an error message (string) and renders it to the screen
 const sendErrorMessage = (message) => {
-  const $errorBox = $(".new-tweet .error");
+  const $errorBox = $(".new-tweet__error");
 
-  $errorBox.children(".msg").html(message);
+  $errorBox.children(".new-tweet__error-message").html(message);
   $errorBox.slideDown();
-  $("#tweet-textarea").focus();
+  $("#new-tweet__textarea").focus();
 };
 
 export { escapeText, isValidTweet, MAX_LENGTH, sendErrorMessage };

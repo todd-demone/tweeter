@@ -1,4 +1,5 @@
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -27,27 +28,8 @@ body {
  * Layout
  */
 
-.xl-container {
-  max-width: $site-max-width;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1rem;
-}
-
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.wrapper-for-header-and-main {
+.wrapper-for-header-and-content {
+  @include container;
+  @include flex($flex-wrap: wrap);
   min-height: calc(100vh - $nav-height-sm);
-}
-
-/* Layout Media Queries */
-
-@media (min-width: $md-breakpoint) {
-  .xl-container {
-    padding: 0 2rem;
-  }
 }

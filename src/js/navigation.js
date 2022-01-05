@@ -1,18 +1,18 @@
 // navigation.js
 
-const navButtonsEvents = () => {
-  const $navButtons = $("#nav-buttons");
+const navbarButtonsEvents = () => {
+  const $navbarButtons = $(".navbar__buttons");
 
   // hide/show the tweet form element when this button is clicked
-  $navButtons.on("click", ".toggle-tweet", () => {
+  $navbarButtons.on("click", ".navbar__button--toggle", () => {
     $(".new-tweet").slideToggle("slow");
-    $("#tweet-textarea").focus();
+    $("#new-tweet__textarea").focus();
   });
 
-  // scroll to the top of window, hide the scroll-top button and show the tweet-toggle button when this button is clicked
-  $navButtons.on("click", ".scroll-top", (e) => {
+  // scroll to the top of window, hide the scrolltop button and show the tweet-toggle button when this button is clicked
+  $navbarButtons.on("click", ".navbar__button--scrolltop", (e) => {
     const $scrollToTopButton = $(e.currentTarget);
-    const $toggleTweet = $scrollToTopButton.siblings(".toggle-tweet");
+    const $toggleTweet = $scrollToTopButton.siblings(".navbar__button--toggle");
 
     $("html, body")
       .animate({ scrollTop: 0 })
@@ -21,17 +21,17 @@ const navButtonsEvents = () => {
         $scrollToTopButton.slideUp("slow");
         $toggleTweet.slideDown("slow");
         $(".new-tweet").slideDown("slow");
-        $("#tweet-textarea").focus();
+        $("#new-tweet__textarea").focus();
       });
   });
 };
 
 const showHideButtonsOnScroll = () => {
-  // hide/show the tweet-toggle button and hide/show the scroll-top button as specified below
+  // hide/show the tweet-toggle button and hide/show the scrolltop button as specified below
   $(window).on("scroll", (e) => {
     const scrollPosition = $(e.currentTarget).scrollTop();
-    const $scrollToTopButton = $(".scroll-top");
-    const $toggleTweet = $scrollToTopButton.siblings(".toggle-tweet");
+    const $scrollToTopButton = $(".navbar__button--scrolltop");
+    const $toggleTweet = $scrollToTopButton.siblings(".navbar__button--toggle");
 
     if (scrollPosition > 150) {
       $scrollToTopButton.slideDown("slow");
@@ -43,4 +43,4 @@ const showHideButtonsOnScroll = () => {
   });
 };
 
-export { navButtonsEvents, showHideButtonsOnScroll };
+export { navbarButtonsEvents, showHideButtonsOnScroll };

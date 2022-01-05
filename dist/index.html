@@ -25,50 +25,50 @@
 
 <body>
   <nav class="navbar">
-    <div class="inner xl-container flex-row">
-      <div class="logo">
+    <div class="navbar__container">
+      <div class="navbar__logo">
         <span>tweeter</span>
       </div>
-      <div id="nav-buttons">
-        <button class="toggle-tweet">
+      <div class="navbar__buttons">
+        <button class="navbar__button--toggle">
           <span><strong>Write</strong> a new tweet</span>
-          <div class="arrow bounce">
+          <div class="navbar__arrow bounce">
             <i class="fa-solid fa-angles-down"></i>
           </div>
         </button>
-        <button class="scroll-top">
+        <button class="navbar__button--scrolltop">
           <i class="fa-solid fa-angles-up"></i>
         </button>
       </div>
     </div>
   </nav>
-  <div class="wrapper-for-header-and-main xl-container flex-row">
+  <div class="wrapper-for-header-and-content">
     <header class="header">
-      <div class="inner">
-        <img src="/images/profile-hex.png" alt="User avatar">
-        <h2>Rhoda <span class="light-heading">Jacobs</span></h2>
+      <div class="header__container">
+        <img class="header__image" src="/images/profile-hex.png" alt="User avatar">
+        <h2 class="header__username">Rhoda <span class="header__username--light">Jacobs</span></h2>
       </div>
     </header>
-    <main class="main">
+    <main class="content">
       <section class="new-tweet">
-        <div class="error">
-          <span class="msg"></span>
+        <div class="new-tweet__error">
+          <span class="new-tweet__error-message"></span>
         </div>
-        <form id="tweet-form">
-          <label for="tweet-textarea">What are you humming about?</label>
-          <textarea autofocus name="text" id="tweet-textarea"></textarea>
-          <footer class="flex-row">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-textarea">140</output>
+        <form class="new-tweet__form">
+          <label class="new-tweet__label" for="new-tweet__textarea">What are you humming about?</label>
+          <textarea id="new-tweet__textarea" autofocus name="text"></textarea>
+          <footer class="new-tweet__footer">
+            <button class="new-tweet__button" type="submit">Tweet</button>
+            <output class="new-tweet__counter" name="counter" for="new-tweet__textarea">140</output>
           </footer>
         </form>
       </section>
-      <section id="tweets-container"></section>
+      <section class="tweets-container"></section>
     </main>
   </div>
   <footer class="footer">
-    <div class="inner xl-container flex-row">
-      <span>Copyright © 2022 | Tweeter Inc. | Todd Demone Web Development</span>
+    <div class="footer__container">
+      <span>Copyright © 2022 | Tweeter Inc. | Todd Demone</span>
     </div>
   </footer>
 </body>

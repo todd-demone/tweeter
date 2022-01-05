@@ -18,7 +18,7 @@ const loadTweets = () => {
 const renderTweets = tweets => {
   let dynamicElements = '';
   tweets.forEach(tweet => dynamicElements += createTweetElement(tweet));
-  $('#tweets-container').html("").append(dynamicElements);
+  $('.tweets-container').html("").append(dynamicElements);
 };
 
 
@@ -26,18 +26,18 @@ const renderTweets = tweets => {
 const createTweetElement = tweet => {
   return `
     <article class="tweet">
-      <header>
-        <div class="avatar-and-name">
-          <img src="${tweet.user.avatars}" alt="small-avatar" width="48" height="48">
-          <span class="name">${tweet.user.name}</span>
+      <header class="tweet__header">
+        <div class="tweet__avatar-name-container">
+          <img class="tweet__avatar" src="${tweet.user.avatars}" alt="small-avatar" width="48" height="48">
+          <span class="tweet__name">${tweet.user.name}</span>
         </div>
-        <div class="handle">
+        <div class="tweet__handle">
           <span>${tweet.user.handle}</span>
         </div>
       </header>
-      <main>${escapeText(tweet.content.text)}</main>
-      <footer>
-        <span class="date">${format(tweet.created_at)}</span>
+      <main class="tweet__main">${escapeText(tweet.content.text)}</main>
+      <footer class="tweet__footer">
+        <span class="tweet__date">${format(tweet.created_at)}</span>
         <div>
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>

@@ -3,77 +3,53 @@
  */
 
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 .header {
   width: 100%;
   margin-top: $nav-height-sm;
-
-  .inner {
-    height: 335px;
-    margin: 0 -1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: $color-primary;
-    background-image: url('/images/asfalt-light.png');
-    color: $white;
-  }
-
-  img {
-    height: 150px;
-  }
-
-  h2 {
-    font-size: $font-size;
-    text-align: center;
-    margin: 0;
-    
-    .light-heading {
-      font-weight: $light;
-    }
-
-  }
-
-}
-
-/* Header Media Queries */
-
-@media(min-width: $md-breakpoint) {
-  
-  .header {
-    
-    .inner {
-      height: 400px;
-      margin: 0 -2rem;
-    }
-
-    img {
-      height: 200px;
-    } 
-  
-    h2 {
-      font-size: 2.25rem;
-    }
-
-  } 
-  
-}
-
-@media (min-width: $xl-breakpoint) {
-  
-  .header {
+  @include breakpoint(desktop) {
     width: 34%;
     margin-top: 0;
-
-    .inner {
-      margin: 0;
-      position: sticky;
-      top: 12.5rem;
-      max-width: 360px;
-      max-height: 360px;
-    }
-
   }
-
 }
+
+.header__container {
+  @include flex($flex-direction: column, $justify-content: space-around, $align-items: center); 
+  height: 335px;
+  margin: 0 -1rem;
+  background-color: $color-primary;
+  background-image: url('/images/asfalt-light.png');
+  color: $white; 
+  @include breakpoint(tablet) {
+    height: 400px;
+    margin: 0 -2rem;
+  }
+  @include breakpoint(desktop) {
+    margin: 0;
+    position: sticky;
+    top: 12.5rem;
+    max-width: 360px;
+    max-height: 360px;
+  }
+}   
+
+.header__image {
+  height: 150px;
+  @include breakpoint(tablet) {
+    height: 200px;
+  }
+}
+
+.header__username {
+  font-size: $font-size;
+  text-align: center;
+  margin: 0;
+  @include breakpoint(tablet) {
+    font-size: 2.25rem;
+  } 
+}
+
+.header__username--light {
+  font-weight: $light;
+}  

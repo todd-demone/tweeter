@@ -3,6 +3,7 @@
 */
 
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 .navbar {
   position: fixed;
@@ -11,53 +12,42 @@
   right: 0;
   z-index: 99;
   background-color: $color-secondary;
-  
-  .inner {
-    height: $nav-height-sm;
-    justify-content: space-between;
-    align-items: center;
-    color: $white;
-  }
+}
 
-  .logo {
-    font-family: $font-secondary;
+.navbar__container {
+  @include container;
+  @include flex($justify-content: space-between, $align-items: center);
+  height: $nav-height-sm;
+  color: $white;
+  @include breakpoint(desktop) {
+    height: $nav-height-lg;
+  }
+}
+
+.navbar__logo {
+  font-family: $font-secondary;
+  font-size: $font-size;
+  @include breakpoint(tablet) {
+    font-size: 2rem;
+  }
+}
+
+.navbar__button--toggle {
+  @include button-empty;
+  font-size: 1rem;
+  @include breakpoint(phone) {
+    font-size: 1.25rem;
+  }
+  @include breakpoint(tablet) {
     font-size: $font-size;
   }
+}
 
-  button {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-  }
-
-  .toggle-tweet {
-    font-size: 1rem;
-  }
-
+.navbar__arrow {
+  animation: bounce 2s infinite;
   .fa-angles-down {
     color: $color-warning;
   }
-
-  .arrow {
-    animation: bounce 2s infinite;
-  }
-  
-  .scroll-top {
-    display: none;
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    height: 60px;
-    width: 60px;
-    background-color: $color-warning;
-    color: $white;
-    border-radius: 50%; 
-  }
-
 }
 
 @keyframes bounce {
@@ -72,41 +62,15 @@
   }
 }
 
-
-/* Navigation Media Queries */
-
-@media (min-width: $xs-breakpoint) {
-
-  .navbar .toggle-tweet {
-    font-size: 1.25rem;
-  }
-  
-}
-
-@media (min-width: $md-breakpoint) {
-
-  .navbar {
-  
-    .logo {
-      font-size: 2rem;
-    }
-  
-    .toggle-tweet {
-      font-size: $font-size;
-    }
-
-  }
-
-} 
-
-@media (min-width: $xl-breakpoint) {
-
-  .navbar {
-    
-    .inner {
-      height: $nav-height-lg;
-    }
-
-  } 
-
+.navbar__button--scrolltop {
+  @include button-empty;
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  height: 60px;
+  width: 60px;
+  background-color: $color-warning;
+  color: $white;
+  border-radius: 50%; 
 }
