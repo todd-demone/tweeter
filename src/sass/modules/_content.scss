@@ -1,0 +1,18 @@
+/*
+* Main
+*/
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.content {
+  width: 100%;
+  margin: 0 auto 2rem;
+  @include breakpoint(desktop) {
+    width: 66%;
+    max-width: $content-max-width;
+    margin-top: 12.5rem;
+    padding-left: 2rem;
+    margin-right: 0;     
+  }
+}
