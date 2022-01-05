@@ -3,17 +3,16 @@
  */
 
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 .footer {
   background-color: $color-secondary;
-  
-  .inner {
-    height: $nav-height-sm;
-    justify-content: center;
-    align-items: center;
-    color: $white;
-    font-size: 0.75rem;
-    text-align: center;
-  }
-
+}
+.footer__container {
+  @include container;
+  @include flex($justify-content: center, $align-items: center);
+  height: $nav-height-sm;
+  color: $white;
+  font-size: 0.75rem;
+  text-align: center;
 }

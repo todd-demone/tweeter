@@ -3,129 +3,96 @@
  */
 
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 .tweet {
   margin: 2rem 0 0;
   padding: 0 1rem 1rem;
   border-style: solid;
   border-width: 3.5px;
-  
-  header {
-    margin-top: 1rem;
-    padding: 0 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1rem;
-    
-    .avatar-and-name {
-      display: flex;
-      align-items: center;
-    }
-
-    img {
-      width: 36px;
-      height: 36px;
-    }
-
-    .name {
-      padding-left: 1rem;
-    }
-
-    .handle {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      color: $color-tertiary;
-      font-weight: $bold;
-    }
-
-  } 
-   
-  main {
-    margin-top: 1rem;
-    padding: 0 1rem 1rem;
-    border-style: solid;
-    border-width: 0 0 3.5px;
-    font-size: 1rem;
-    font-weight: $bold;
+  &:hover {
+    box-shadow: 6px 6px $color-tertiary;
   }
-  
-  footer {
-    margin-top: 0.75rem;
-    padding: 0 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    font-size: .75rem;
-    
-    .date {
-      font-weight: $bold;
+  &:first-child {
+    @include breakpoint (desktop) {
+      margin-top: 0;
     }
-
-    i {
-      padding-left: .25rem;
-      color: $color-secondary;
-    }
-      
-    i:first-child {
-      padding-left: 0;
-    }
-
-    i:hover {
-      color: $color-primary;
-    }
-
   }
-  
 }
 
-.tweet:hover {
-  box-shadow: 6px 6px $color-tertiary;
+.tweet__header {
+  @include flex($justify-content: space-between);
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  @include breakpoint(tablet) {
+    padding: 0 1.5rem 0 0.5rem;
+    font-size: $font-size;
+  }
 }
 
-/* Tweets and tweets-container media queries */
+.tweet__avatar-name-container {
+  @include flex($align-items: center);
+}
 
-@media (min-width: $sm-breakpoint) {
+.tweet__avatar {
+  width: 36px;
+  height: 36px;
+  @include breakpoint(tablet) {
+    width: 48px;
+    height: 48px;
+  }
+}
 
-  .tweet main {
+.tweet__name {
+  padding-left: 1rem;
+}
+
+.tweet__handle {
+  @include flex($flex-direction: column, $justify-content: center);
+  color: $color-tertiary;
+  font-weight: $bold;
+}
+
+.tweet__main {
+  margin-top: 1rem;
+  padding: 0 1rem 1rem;
+  border-style: solid;
+  border-width: 0 0 3.5px;
+  font-size: 1rem;
+  font-weight: $bold;
+  @include breakpoint(phablet) {
     font-size: 1.25rem;
   }
-
-}
-
-@media (min-width: $md-breakpoint) {
-
-  .tweet {
-    
-    header {
-      padding: 0 1.5rem 0 0.5rem;
-      font-size: $font-size;
-      
-      img {
-        width: 48px;
-        height: 48px;
-      }
-
-    } 
-  
-    main {
-      margin-top: 2rem;
-      padding: 0 1.5rem 1.5rem;
-      font-size: $font-size;
-    }
-
-    footer {
-      padding: 0 1.5rem 0;
-      font-size: 1rem;
-    }
-
-  } 
-
-}
-
-@media (min-width: $xl-breakpoint) {
-  
-  .tweet:first-child {
-    margin-top: 0;
+  @include breakpoint(tablet) {
+    margin-top: 2rem;
+    padding: 0 1.5rem 1.5rem;
+    font-size: $font-size;
   }
-  
+} 
+
+.tweet__footer {
+  @include flex($justify-content: space-between);
+  margin-top: 0.75rem;
+  padding: 0 1rem 0;
+  font-size: .75rem;
+  @include breakpoint(tablet) {
+    padding: 0 1.5rem 0;
+    font-size: 1rem;
+  }
+}
+
+.tweet__date {
+  font-weight: $bold;
+}
+    
+.tweet__footer .fa-solid {
+  padding-left: .25rem;
+  color: $color-secondary;
+  &:first-child {
+    padding-left: 0;
+  }
+  &:hover {
+    color: $color-primary;
+  }
 }
