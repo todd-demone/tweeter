@@ -36,7 +36,7 @@ Clone the repository and run the app using the following commands in the termina
 git clone https://github.com/todd-demone/tweeter.git
 cd tweeter
 npm install     // installs all of the dependencies
-node run start  // starts the web server
+npm run start  // starts the web server
 ```
 
 To use the app, go to <http://localhost:8080/> in your browser.
