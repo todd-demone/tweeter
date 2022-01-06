@@ -8,7 +8,7 @@ const tweetFormEvents = () => {
 
   // send Tweet to server when user clicks 'Tweet' button or presses `Enter` key
   $tweetForm.on("submit keydown", (e) => {
-    if (e.type === "submit" || e.keyCode === 13) {
+    if (e.type === "submit" || e.key === 'Enter') {
       const data = $tweetForm.serialize();
       const tweetString = $tweetForm.children("#new-tweet__textarea").val();
 
