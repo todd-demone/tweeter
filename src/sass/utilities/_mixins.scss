@@ -2,42 +2,52 @@
  * Mixins
  */
 
- @use '../utilities/variables' as *;
+@use "../utilities/variables" as *;
 
- @mixin breakpoint($point) {
+@mixin breakpoint($point) {
   @if $point == phone {
-    @media (min-width: $phone-breakpoint) { @content ; }
-  }
-  @else if $point == phablet {
-    @media (min-width: $phablet-breakpoint) { @content ; }
-  }
-  @else if $point == tablet {
-    @media (min-width: $tablet-breakpoint) { @content ; }
-  }
-  @else if $point == desktop {
-    @media (min-width: $desktop-breakpoint) { @content ; }
+    @media (min-width: $phone-breakpoint) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (min-width: $phablet-breakpoint) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: $desktop-breakpoint) {
+      @content;
+    }
   }
 }
 
- @mixin container {
-   @include breakpoint(tablet) {
-     padding: 0 2rem;
-   }
+@mixin container {
+  @include breakpoint(tablet) {
+    padding: 0 2rem;
+  }
   max-width: $site-max-width;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1rem;
- }
+}
 
- @mixin flex($flex-direction: row, $flex-wrap: nowrap, $justify-content: flex-start, $align-items: stretch) {
+@mixin flex(
+  $flex-direction: row,
+  $flex-wrap: nowrap,
+  $justify-content: flex-start,
+  $align-items: stretch
+) {
   display: flex;
   flex-direction: $flex-direction;
   flex-wrap: $flex-wrap;
   justify-content: $justify-content;
   align-items: $align-items;
- }
+}
 
- @mixin button-empty {
+@mixin button-empty {
   background: none;
   color: inherit;
   border: none;
@@ -45,4 +55,4 @@
   font: inherit;
   cursor: pointer;
   outline: inherit;
- }
+}

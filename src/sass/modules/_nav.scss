@@ -2,8 +2,8 @@
 * Navigation
 */
 
-@use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 .navbar {
   position: fixed;
@@ -51,7 +51,11 @@
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
@@ -72,5 +76,5 @@
   width: 60px;
   background-color: $color-warning;
   color: $white;
-  border-radius: 50%; 
+  border-radius: 50%;
 }

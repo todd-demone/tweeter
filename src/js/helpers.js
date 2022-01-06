@@ -30,7 +30,7 @@ const sendErrorMessage = (message) => {
 
   $errorBox.children(".new-tweet__error-message").html(message);
   $errorBox.slideDown();
-  $("#new-tweet__textarea").trigger('focus');
+  $("#new-tweet__textarea").trigger("focus");
 };
 
 export { escapeText, isValidTweet, MAX_LENGTH, sendErrorMessage };

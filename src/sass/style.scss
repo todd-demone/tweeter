@@ -6,15 +6,15 @@
  * Author: Todd Demone
  * Source: https://github.com/todd-demone/tweeter
  */
- 
+
 //==============================================================================
 // Modules
 //==============================================================================
-@use 'utilities/normalize';
-@use 'modules/layout';
-@use 'modules/nav';
-@use 'modules/header';
-@use 'modules/content';
-@use 'modules/new-tweet';
-@use 'modules/tweets-container';
-@use 'modules/footer';
+@use "utilities/normalize";
+@use "modules/layout";
+@use "modules/nav";
+@use "modules/header";
+@use "modules/content";
+@use "modules/new-tweet";
+@use "modules/tweets-container";
+@use "modules/footer";

@@ -6,7 +6,7 @@ const navbarButtonsEvents = () => {
   // hide/show the tweet form element when this button is clicked
   $navbarButtons.on("click", ".navbar__button--toggle", () => {
     $(".new-tweet").slideToggle("slow");
-    $("#new-tweet__textarea").trigger('focus');
+    $("#new-tweet__textarea").trigger("focus");
   });
 
   // scroll to the top of window, hide the scrolltop button and show the tweet-toggle button when this button is clicked
@@ -21,7 +21,7 @@ const navbarButtonsEvents = () => {
         $scrollToTopButton.slideUp("slow");
         $toggleTweet.slideDown("slow");
         $(".new-tweet").slideDown("slow");
-        $("#new-tweet__textarea").trigger('focus');
+        $("#new-tweet__textarea").trigger("focus");
       });
   });
 };

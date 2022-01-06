@@ -2,8 +2,8 @@
  * Tweets and Tweets Container
  */
 
-@use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 .tweet {
   margin: 2rem 0 0;
@@ -14,7 +14,7 @@
     box-shadow: 6px 6px $color-tertiary;
   }
   &:first-child {
-    @include breakpoint (desktop) {
+    @include breakpoint(desktop) {
       margin-top: 0;
     }
   }
@@ -69,13 +69,13 @@
     padding: 0 1.5rem 1.5rem;
     font-size: $font-size;
   }
-} 
+}
 
 .tweet__footer {
   @include flex($justify-content: space-between);
   margin-top: 0.75rem;
   padding: 0 1rem 0;
-  font-size: .75rem;
+  font-size: 0.75rem;
   @include breakpoint(tablet) {
     padding: 0 1.5rem 0;
     font-size: 1rem;
@@ -85,9 +85,9 @@
 .tweet__date {
   font-weight: $bold;
 }
-    
+
 .tweet__footer .fa-solid {
-  padding-left: .25rem;
+  padding-left: 0.25rem;
   color: $color-secondary;
   &:first-child {
     padding-left: 0;

@@ -8,7 +8,7 @@ const tweetFormEvents = () => {
 
   // send Tweet to server when user clicks 'Tweet' button or presses `Enter` key
   $tweetForm.on("submit keydown", (e) => {
-    if (e.type === "submit" || e.key === 'Enter') {
+    if (e.type === "submit" || e.key === "Enter") {
       const data = $tweetForm.serialize();
       const tweetString = $tweetForm.children("#new-tweet__textarea").val();
 
@@ -19,7 +19,10 @@ const tweetFormEvents = () => {
       $.post("/tweets", data)
         .then(() => {
           loadTweets();
-          $tweetForm.trigger("reset").find(".new-tweet__counter").text(MAX_LENGTH);
+          $tweetForm
+            .trigger("reset")
+            .find(".new-tweet__counter")
+            .text(MAX_LENGTH);
         })
         .catch((err) =>
           sendErrorMessage(

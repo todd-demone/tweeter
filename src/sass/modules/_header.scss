@@ -2,8 +2,8 @@
  * Header
  */
 
-@use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 .header {
   width: 100%;
@@ -15,12 +15,16 @@
 }
 
 .header__container {
-  @include flex($flex-direction: column, $justify-content: space-around, $align-items: center); 
+  @include flex(
+    $flex-direction: column,
+    $justify-content: space-around,
+    $align-items: center
+  );
   height: 335px;
   margin: 0 -1rem;
   background-color: $color-primary;
-  background-image: url('/images/asfalt-light.png');
-  color: $white; 
+  background-image: url("/images/asfalt-light.png");
+  color: $white;
   @include breakpoint(tablet) {
     height: 400px;
     margin: 0 -2rem;
@@ -32,7 +36,7 @@
     max-width: 360px;
     max-height: 360px;
   }
-}   
+}
 
 .header__image {
   height: 150px;
@@ -47,9 +51,9 @@
   margin: 0;
   @include breakpoint(tablet) {
     font-size: 2.25rem;
-  } 
+  }
 }
 
 .header__username--light {
   font-weight: $light;
-}  
+}
